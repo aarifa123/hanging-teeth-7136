@@ -5,15 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="./styles/scrolebar.css">
     <style>
-
-#page>img{
-    margin-bottom: -20%;
+/* 
+#page>img:nth-child(1){
+    margin-bottom: -10%;
 }
+#page>img:nth-child(2){
+    margin-top: 20px;
+} */
+#button{
+margin-top: -160px;
+margin-bottom: 0px;
+}
+
 button{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 20px;
     background-color: azure;
     height: 50px;
@@ -22,19 +30,30 @@ button{
     padding: 20px;
     border: 0px;
 }
-#button{
-margin-top: -150px;
-margin-bottom: 200px;
+#button_1{
+    margin-top: -170px;
+margin-bottom: 0px;
 }
+
+/* footer */
 #footer{
     background-color:#616161 ;
     font-style: oblique;
 display: flex;
 padding: 50px;
 }
+#footer>div>h4>a{
+    color: antiquewhite;
+}
 #footer>div>h4{
+   
     margin-left: 40px;   
 }
+#page>img{
+    width: 100%;
+   
+}
+
 
 
 
@@ -42,6 +61,8 @@ padding: 50px;
     </style>
 </head>
 <body>
+
+    <!-- Nav Bar Start here -->
     <nav>
     <div class="wrapper">
        
@@ -50,23 +71,20 @@ padding: 50px;
        <a href="">Store Locator</a>
        <a href="">Track Order</a>
        <a href="">My AEO</a> 
-       <a href="">Favorites</a> 
+       <a href="">Cart</a> 
     </div>
         <div class="logo">
-            <img  src="C:\Users\HP\Downloads\c55880b4864147c6b3b1bf1e4d7ce06f.png" alt="">
+            <img  src="./images/logo.png" alt="">
         </div>
-        <ul class="section">
-            <li class="sub-menu" id="men">  <a href="">Men</a>
-                <ul class="drop-down">
-                    <li><a href="">TOPS </a></li>
-                    <li><a href="">T-Shirt</a></li>
+        <ul class="section" id="nav_buttons">
+            <li class="sub-menu" id="men"><a href="https://course.masaischool.com/lectures">Men</a>
+                <ul class="drop-down" id="drop-down">
+                  
+                    <li class="subCat"><a href="">T-Shirt</a></li>
                     <li><a href="">Graphic Teas</a></li>
                     <li><a href="">Shirts</a></li>
                     <li><a href="">Jockets</a></li>
                     <li><a href="">Hoodies & Sweatshirts</a></li>
-            </ul>
-            <ul  class="drop-down">
-                <li><h3>BOTTOMS</h3></li>
                 <li><a href="">Jeans</a></li>
                 <li><a href="">sorts</a></li>
                 <li><a href="">pants</a></li>
@@ -74,17 +92,13 @@ padding: 50px;
                 <li><a href="">joggers</a></li>
         </ul>
             </li>
-            <li class="sub-menu"> <a href="">Women</a>
+            <li class="sub-menu" id="women"> <a href="">Women</a>
                 <ul class="drop-down">
-                    <li><h3>TOPS </h3></li>
+                    
                     <li><a href="">T-Shirt</a></li>
                     <li><a href="">Graphic Teas</a></li>
-                    <li><a href="">Shirts</a></li>
                     <li><a href="">Jockets</a></li>
-                    <li><a href="">Hoodies & Sweatshirts</a></li>
-                </ul>
-                <ul  class="drop-down">
-                    <li><h3>BOTTOMS</h3></li>
+                    <li><a href="">Hoodies & Sweatshirts</a></li> 
                     <li><a href="">Jeans</a></li>
                     <li><a href="">sorts</a></li>
                     <li><a href="">pants</a></li>
@@ -94,18 +108,27 @@ padding: 50px;
             </li>
             <li class="sub-menu"> <a href="">Jeans</a>
                 <ul class="drop-down">
-                    <li><h3>MENS JEANS</h3></li>
+                    
                     <li><a href="">Skinny Jeans </a></li>
                     <li><a href="">Slim Jeans </a></li>
                     <li><a href="">Straight Jeans </a></li>
                     <li><a href="">Airflex Jeans </a></li>
                     <li><a href="">Bootcat Jeans </a></li>
-                    <li><a href="">Slim Straight Jeans </a></li>
                     <li><a href="">Athletic fit Jeans </a></li>
                     <li><a href="">Ripped Jeans</a></li>
-                </ul>
+                    <li><a href="">High rise Jeans </a></li>
+                    <li><a href="">Cropped Jeans </a></li>
+                    <li><a href="">Mom</a></li>
+                    
+                    <li><a href="">Ripped Jeans</a></li>
+        </ul>
+            </li>
+            <li class="sub-menu"> <a href="">sale</a>
+              
+            </li>
+            <li class="sub-menu"><a href="">Winter Wear</a>
                 <ul  class="drop-down">
-                    <li><h3>WOMENS JEANS</h3></li>
+                   
                     <li><a href=""> Artist Jeans </a></li>
                     <li><a href="">Curvy Jeans </a></li>
                     <li><a href="">joggings </a></li>
@@ -115,15 +138,19 @@ padding: 50px;
                     <li><a href="">Skinny Jeans </a></li>
                     <li><a href="">Ripped Jeans</a></li>
         </ul>
-            </li>
-            <li class="sub-menu"> <a href="">sale</a></li>
-            <li class="sub-menu"><a href="">Winter Wear</a></li>
+    </li>
+    <input id="search" type="text" placeholder="Search Here">
         </ul>
+       
 
     </div>
 </nav>
+
+<!-- Nav Bar End here -->
+
+
 <div id="page">
-    <img src="https://imagescdn.aeo.in/img/app/brands/ae/AE_D_P1_06012023.jpg?w=1356&auto=format,compress" alt="">
+    <img id="imgTop" src="https://imagescdn.aeo.in/img/app/brands/ae/AE_D_P1_06012023.jpg?w=1356&auto=format,compress" alt="">
      
      <div id="button">
      <button id="shop_men">Shop Men</button><br>
@@ -131,7 +158,11 @@ padding: 50px;
     </div>
     
 
-    <img src="https://imagescdn.aeo.in/img/app/brands/ae/AE_D_P2_11012023.jpg?w=1356&auto=format,compress" alt="">
+    <img id="imgMid" src="https://imagescdn.aeo.in/img/app/brands/ae/AE_D_P2_11012023.jpg?w=1356&auto=format,compress" alt="">
+    <div id="button_1">
+        <button id="shop_men_1">Shop Men</button><br>
+        <button id="shop_women_2">Shop Women </button>
+       </div>
 
     <img src="https://imagescdn.aeo.in/img/app/brands/ae/AE_D_P3_11012023.jpg?w=1356&auto=format,compress" alt="">
 
@@ -160,6 +191,7 @@ padding: 50px;
     </div>
 
 </div> 
+<script src="scripts\index.js"></script>
 </body>
 
 </html>

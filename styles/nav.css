@@ -1,31 +1,31 @@
 .logo>img{
-    border-radius: 15px;
-    width: 80px;
-    height: 70px;
-    margin-top: -5%;
-    margin-right: 5px
- }
+   border-radius: 15px;
+   width: 80px;
+   height: 70px;
+   margin-top: -5%;
+   margin-right: 5px
+}
 
- #navTop{
-    text-align: end;
-    margin: 20px;
-    margin-bottom: 10px;
-    
+#navTop{
+   text-align: end;
+   margin: 20px;
+   margin-bottom: 10px;
+   
 }
 
 #navTop>a{
-    
-  margin-left: 10px;  
+   
+ margin-left: 10px;  
 }
 
- a{
-    text-decoration: none;
-    color: black;
-   
- }
- li{
-    list-style: none;
- }
+a{
+   text-decoration: none;
+   color: black;
+  
+}
+li{
+   list-style: none;
+}
 
 nav .wrappper{
 max-width: 1300px;
@@ -46,7 +46,7 @@ nav .wrapper .section li a:hover{
 background-color:#5D4037 ;
 }
 nav .wrapper .section li.sub-menu>a:after{
-content: '\eb21';
+/* content: '\eb21'; */
 font-family: 'boxicons' !important;
 position: absolute;
 color: #5D4037;
@@ -55,7 +55,7 @@ vertical-align: middle;
 margin-left: 5px;
 }
 nav .wrapper .section li.sub-menu:hover>a:after{
-content: '\eaed';
+/* content: '\eaed'; */
 font-family: 'boxicons' !important;
 position: absolute;
 color: #5D4037;
@@ -78,4 +78,13 @@ width: 100%;
 visibility: visible;
 background-color: aliceblue;
 transition: all 0.5s;
+}
+#search{
+   width: 200px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   border-radius: 10px;
+   height: 30px;
+   margin-left: 100%;
+   
+   
 }
