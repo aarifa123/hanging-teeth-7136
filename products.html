@@ -1,327 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>trendy eagle</title>
-<style>
- .parent-container {
-  position: relative;
-}
-    .side-bar-parent{
-       
-        /* position: fixed; */
- top: 0;
-  left: 0;
-  bottom: 0;
-  width: 300px;
-  /* background-color: #f1f1f1;  */
-  overflow-x: hidden;
- padding: 8px 8px 50px 50px; 
-    }
-    .side-bar-list{
-        display: none;
-    }
-   
-    .parent-container {
-        display: flex;
-    }
-    .color-circle {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 10px;
-}
-ul {
-  list-style-type: none;
-  margin: 0px;
-}
-hr{
-    color: gainsboro;
-    
-}
-.hidden {
-  display: none;
-}
-
-
-/* drop down */
-
-</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/product.css">
+  <title>Trendy Eagle Products</title>
+  <link rel="stylesheet" href="https://aarifa123.github.io/hanging-teeth-7136/styles/scrolebar.css">
 </head>
 <body>
-  <!-- <select id="mySelect">
-    <option value="option1">Option 1</option>
-    <option value="option2">Option 2</option>
-    <option value="option3">Option 3</option>
-  </select> -->
- 
-    <div class="parent-container">
-        
-     
-            <div class="side-bar-parent">
-         <h2>FILTER</h2>
-         <h3 style="color: gray;font-weight: lighter;">1178 items </h3>
-      
-          
-         <hr>
-         <!--category   -->
-         <div class=" side-bar-button">
-             <h3>Category   +</h3>
-             <div class="side-bar-list">
-                <h4>
-
-                    90s Boyfrien</h4>
-                <h4 class="side-bar-list-item" >Artist Flare Jean</h4>
-                <h4 class="side-bar-list-item">Bags</h4>
-                <h4 class="side-bar-list-item">Belts</h4>
-                <h4 class="side-bar-list-item">Crop Tops</h4>
-                <h4  class="side-bar-list-item">Curvy Skinny</h4>
-                <h4 class="side-bar-list-item">Graphic Tees</h4>
-                <h4 class="side-bar-list-item">Hats</h4>
-                <h4 class="side-bar-list-item">High Waisted Jeggings</h4>
-                <h4 class="side-bar-list-item">Jackets</h4>
-                <h4 class="side-bar-list-item">Jeans</h4>
-                <h4 class="side-bar-list-item">Jegging</h4>
-                <h4 class="side-bar-list-item">Jewelry</h4>
-                <h4 class="side-bar-list-item">Joggers</h4>
-                <h4 class="side-bar-list-item">Jumpsuits</h4>
-                <h4 class="side-bar-list-item">Kickboot</h4>
-                <h4 class="side-bar-list-item">Mask</h4>
-                <h4 class="side-bar-list-item">Maxi Dresses</h4>
-                <h4 class="side-bar-list-item">Midi Dresses</h4>
-                <h4 class="side-bar-list-item"> Mom Jean</h4>
-                <h4 class="side-bar-list-item">Pants</h4>
-                <h4 class="side-bar-list-item">Rompers</h4>
-                <h4 class="side-bar-list-item">Shift Dresses</h4>
-                <h4 class="side-bar-list-item">Shirts</h4>
-                <h4 class="side-bar-list-item">Skinny Kick</h4>
-             </div>
-         </div>
-         <hr>
-         <!-- category  end -->
-         <!-- product type -->
-         <div class=" side-bar-button">
-            <h3>Product Type   + </h3>
-            <div class="side-bar-list">
-<h4 class="side-bar-list-item">
-
-    3 Pack Shorts</h4>
-<h4 class="side-bar-list-item">5 Pack Socks</h4>
-<h4 class="side-bar-list-item">Baggy Jeans</h4>
-<h4 class="side-bar-list-item">Belts</h4>
-<h4 class="side-bar-list-item">Boxer Shorts</h4>
-<h4 class="side-bar-list-item">Boxers</h4>
-<h4 class="side-bar-list-item">Crew Neck T-Shirts</h4>
-<h4 class="side-bar-list-item">Embroidered T-Shirts</h4>
-
-
-
-
-            </div>
-        </div>
-        <!--  product type end -->
-        <!-- fit  -->
-       <hr>
-       <div class=" side-bar-button">
-        <h3>Fit +</h3>
-        <div class="side-bar-list">
-        <h4 class="side-bar-list-item">
-
-            1|Relaxed Straight</h4>
-        <h4 class="side-bar-list-item">Athletic</h4>
-        <h4 class="side-bar-list-item">Classic fit</h4>
-        <h4 class="side-bar-list-item">Loose fit</h4>
-        <h4 class="side-bar-list-item">Skinny Fit</h4>
-        <h4 class="side-bar-list-item">Slim fit</h4>
-        <h4 class="side-bar-list-item">Slim Straight</h4>
-        <h4 class="side-bar-list-item">Standard fit</h4>
-        <h4 class="side-bar-list-item">Straight Fit</h4>
-        <h4 class="side-bar-list-item">Ultra Skinny</h4>
-        <h4 class="side-bar-list-item">Super Skinny</h4>
-        <h4 class="side-bar-list-item">Original Straight</h4>
-        </div>
-        </div>     
-        <!-- fit end    -->
-        <!-- size -->
-        <hr>
-        <div class=" side-bar-button">
-<h3>Sizes +</h3>
-<div class="side-bar-list">
-<h4 class="side-bar-list-item">XS</h4>
-<h4 class="side-bar-list-item">S</h4>
-<h4 class="side-bar-list-item">M</h4>
-<h4 class="side-bar-list-item">L</h4>
-<h4 class="side-bar-list-item">XL</h4>
-<h4 class="side-bar-list-item">XXL</h4>
-<h4 class="side-bar-list-item">XXXL</h4>
-<h4 class="side-bar-list-item">26</h4>
-<h4 class="side-bar-list-item">28</h4>
-<h4 class="side-bar-list-item">30</h4>
-<h4 class="side-bar-list-item">38</h4>
-<h4 class="side-bar-list-item">40</h4>
-</div>
-</div>
- <!-- size  END-->
- <!-- color -->
- <hr>
- <div class=" side-bar-button">
-    <h3>colors +</h3>
-    <div class="side-bar-list">
-<ul>
-<li>
-<div class="color-circle" style="background-color: #000000; "></div>
-<span>black</span>
-</li>
-<li>
-<div class="color-circle" style="background-color: #c0c0c0;"></div>
-<span>Light Grey</span>
-</li>
-<li>
-<div class="color-circle" style="background-color: #5A5A5A;"></div>
-<span>gray</span>
-</li>
-<li>
-    <div class="color-circle" style="background-color: #6F8FAF"></div>
-    <span>Denim blue</span>
-    </li>
-<!-- Add more colors as needed -->
-</ul>
-</div>
-</div>     
-<!-- color end  -->
-<!-- prices -->
-<hr>
-<div class=" side-bar-button">
-    <h3>Price +</h3>
-    <div class="side-bar-list">
+  <div id="nav">
     
-   
-    <h4 class="side-bar-list-item">
+  </div>
+  
+  <div id='ParentCont'>
 
-        1500 TO 2999
-    </h4>
-    <h4 class="side-bar-list-item">3000 TO 4499</h4>
-    <h4 class="side-bar-list-item">4500 TO 6999</h4>
-    </div></div>
-    <!-- price end -->
-    <!-- discount -->
-    <hr>
-    <div class=" side-bar-button">
-        <h3>Discount +</h3>
-        <div class="side-bar-list">
-       
-        <h4 class="side-bar-list-item">
-
-            30% and above</h4>
-        <h4 class="side-bar-list-item">50% and above</h4>
-        <h4 class="side-bar-list-item">60% and above</h4>
-        </div>
-        </div>   
-        <hr>  
-    <!-- discount end -->
-         <!--wash  -->
-<div class=" side-bar-button">
-<h3>Wash +</h3>
-<div class="side-bar-list">
-
-<h4 class="side-bar-list-item">
+    <div id="Lside">
 
 
 
-    Black</h4>
-<h4 class="side-bar-list-item">Dark wash </h4>
-<h4 class="side-bar-list-item">Light wash</h4>
-<h4 class="side-bar-list-item">Medium wash </h4>
-</div>
-</div>   
-<hr>
+      <div id="Gender">
+        <select name="gender" id="gender">
+          <option value="">Select Men or Women</option>
+          <option value="Men"> Men</option>
+          <option value="Women">Women</option>
+        </select>
+      </div>
+        
+    <div>
+      <h4 id="WinterWear">Season Special :- WinterWear</h4>
+      <button id="clearFilters">Clear Filters</button>
+      
+    </div>
 
-<!-- wash end -->
-</div>
+
+    <div id="SubCategory">
+      <select name="SCategory" id="SCategory">
+        <option value="">--Please choose the Category--</option>
+        <option value="Shirts">Shirts</option>
+        <option value="T-Shirt">T-Shirt</option>
+        <option value="Sweaters">Sweaters</option>
+        <option value="Hoodies">Hoodies</option>
+        <option value="Jackets">Jackets</option>
+        <option value="Jeans">Jeans</option>
+        <option value="Shorts">Shorts</option>
+        <option value="Wallets">Wallets</option>
+        <option value="Belts">Belts</option>
+        <option value="Hats">Hats</option>
+    </select>
+
+    
+    
+    </div>
 
 
-<div class="product-divs">
-<!-- your divs for products -->
-<h1>products </h1>
-</div>
-<div class="sort-dropdown" onclick="toggleDropdown()">sort</div>
-<div class="dropdown-list hidden"><h1>style 1</h1></div>
-<div class="dropdown-list hidden"><h1>style 2</h1></div>
-<div class="dropdown-list hidden"><h1>style 3</h1></div>
+    </div>
+    <div id="Rside">
+      <div id="SortFunctions">
+
+        <select name="sortLH" id="sortbyprice">
+          <option value="">Sort by Price</option>
+          <option value="LH">Low to High</option>
+          <option value="HL">High to Low</option>
+        </select>
+      </div >
+      <div id="renderhere">
+
+      </div>
+      <div id="pagination">
+        
+      </div>
+    </div>
+      
+  </div>
+
+
 
 </body>
-
+<script src="/scripts/product.js"></script>
+<!-- <script src="https://aarifa123.github.io/hanging-teeth-7136/scripts/Adminfile.js"></script> -->
 </html>
-<script>
-  
-    
-//     document.getElementById("mySelect").addEventListener("change", function(){
-//     var selectedOption = this.options[this.selectedIndex].value;
-//     console.log(selectedOption);
-// });
-
-
-
-let menuList=document.getElementsByClassName("side-bar-list")
-
-let btn=document.getElementsByClassName("side-bar-button")
-for(let i=0;i<=btn.length-1;i++){
-btn[i].addEventListener("click", function(){
-
-if(menuList[i].style.display === "none") {
-
-menuList[i].style.display = "block";
-menuList[i].style.color="gray"
-
-   
-  } else {
-    menuList[i].style.display = "none";
-  }
-    });
-    }
-   let dropdown=document.getElementsByClassName("dropdown-list") 
-   for(let i=0;i<=dropdown.length-1;i++){
-    dropdown[i].addEventListener("click",()=>{
-    console.log(dropdown[i].innerText)
-   })
-   }
-   function toggleDropdown() {
-  var dropdownList = document.getElementsByClassName("dropdown-list");
-  for (var i = 0; i < dropdownList.length; i++) {
-    dropdownList[i].classList.toggle("hidden");
-  }
-}
-var dropdownList = document.getElementsByClassName("dropdown-list");
-  for (var i = 0; i < dropdownList.length; i++) {
-    dropdownList[i].addEventListener("click", function(){
-       for (var j = 0; j < dropdownList.length; j++) {
-       if(dropdownList[j] !== this)
-       dropdownList[j].classList.add("hidden");
-       }
-    });
-  }
-
-
-    // </script>
-    <!-- // <div class=" side-bar-button">
-    //     <h3>Sizes +</h3>
-    //     <div class="side-bar-list">
-    //     <h4 class="side-bar-list-item">
-
-    //         1|Relaxed Straight</h4>
-    //     <h4 class="side-bar-list-item">S</h4>
-    //     <h4 class="side-bar-list-item">M</h4>
-    //     <h4 class="side-bar-list-item">L</h4>
-    //     <h4 class="side-bar-list-item">XL</h4>
-    //     <h4 class="side-bar-list-item">XXL</h4>
-    //     <h4 class="side-bar-list-item">XXXL</h4>
-    //     <h4 class="side-bar-list-item">26</h4>
-    //     <h4 class="side-bar-list-item">28</h4>
-    //     <h4 class="side-bar-list-item">30</h4>
-    //     <h4 class="side-bar-list-item">38</h4>
-    //     <h4 class="side-bar-list-item">40</h4>
-    //     </div>
-    //     </div>      -->

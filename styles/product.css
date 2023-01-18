@@ -1,0 +1,27 @@
+
+
+#ParentCont{
+    display: flex;
+
+}
+#ParentCont>div{
+    border:2px solid red;
+}
+
+#clearFilters{
+    /* display: block; */
+}
+
+#renderhere{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin: 30px;
+}
+
+#renderhere>div{
+   
+    border:2px solid red;
+    
+}
+
