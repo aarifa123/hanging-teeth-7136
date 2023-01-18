@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Data</title>
+    <link rel="stylesheet" href="./styles/scrolebar.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-weight: bolder;
+      }
+      nav {width: 100%;height: 70px;background: rgb(32, 7, 5);background: linear-gradient(90deg, rgba(32, 7, 5, 1) 0%, rgba(255, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 100%);display: flex;justify-content: space-between;align-items: center;font-size: 30px;}
+      nav > a:nth-child(1) { padding: 0px 30px 0px 30px;text-decoration: none;color: white;}
+      nav > a:nth-child(2) {padding: 0px 30px 0px 30px;text-decoration: none;color: black;}
+      h1 {color: white;position: fixed;}
+      table {width: 100%;}
+      thead > tr {display: flex;justify-content: space-around; background: rgb(3, 3, 3); background: linear-gradient(90deg, rgba(3, 3, 3, 0) 0%, rgba(54, 3, 3, 0) 14%, rgba(255, 5, 5, 0) 62%, rgba(57, 255, 53, 1) 72%,rgba(88, 71, 62, 1) 81%, rgba(167, 38, 33, 1) 95%, rgba(196, 25, 22, 1) 100%, rgba(255, 0, 0, 1) 100%); }
+      tbody > tr {display: flex;justify-content: space-around;background: rgb(3, 3, 3);background: linear-gradient(  90deg,  rgba(3, 3, 3, 1) 0%,  rgba(54, 3, 3, 0.23853291316526615) 14%,  rgba(255, 5, 5, 0) 69%, rgba(17, 219, 213, 1) 72%, rgba(88, 71, 62, 1) 80%, rgba(167, 38, 33, 1) 95%, rgba(196, 25, 22, 1) 100%, rgba(255, 0, 0, 1) 100%);}
+      thead > tr > td,tbody > tr > td { width: 20%;}
+      thead > tr > td {font-size: 20px;font-weight: bolder;height: 60px;}
+      tbody > tr {height: 100px;border-bottom: 1px solid white;}
+      img {width: 100%;border-radius: 10px; }
+      .adminsiseimg { width: 55px;}
+      .delete {color: white;}
+      .updata {color: rgb(0, 0, 0);}
+      td {display: flex;align-items: center;padding-left: 20px;text-align: left;}
+      #next { display: flex; justify-content: space-around;}
+      #next > button {margin: 5px 0px 5px 0px;font-size: 25px;padding: 5px 20px;background: rgb(3, 3, 3);background: linear-gradient(  90deg,  rgba(3, 3, 3, 1) 0%,  rgba(255, 5, 5, 1) 26%,  rgba(88, 71, 62, 1) 53%, rgba(255, 192, 0, 1) 84% ); color: white; }
+      .swal-text { font-size: 20px; font-weight: bolder; }
+      .swal-button {background-color: #0025ff; }
+      form {box-shadow: 10px 10px 132px -1px rgba(255, 145, 145, 1);width: 400px;border: 2px solid teal;text-align: left;margin: auto;background-color: rgb(215, 173, 173);padding: 20px;border-radius: 20px;display: grid;grid-template-columns: repeat(5, 1fr);gap: 20px;margin-bottom: 40px;}
+      #updatadata {position: fixed;display: none;top: 0%;left: 0%;width: 100%;height: 100%;z-index: 1001;-moz-opacity: 0.8;opacity: 1;filter: alpha(opacity=80);}
+      #main,#price,#btn1 {grid-column-start: 1; grid-column-end: 3; font-size: 15px; border-radius: 5px; padding: 10px; }
+      #sub, #color, #btn {   grid-column-start: 4;   grid-column-end: 6; font-size: 15px; border-radius: 5px; padding: 10px; }
+      #img1,#img2,#img3,#img4,#des,#name {  grid-column-start: 1;grid-column-end: 6;font-size: 15px;border-radius: 5px;padding: 10px;}
+      button { grid-column-start: 2; grid-column-end: 5; padding: 10px; color: white; font-weight: bolder; border-radius: 10px; background: rgb(3, 3, 3); background: linear-gradient(   90deg, rgba(3, 3, 3, 1) 0%, rgba(255, 5, 5, 1) 26%, rgba(88, 71, 62, 1) 53%, rgba(255, 192, 0, 1) 84% );}
+      #sorting{ display: flex; justify-content: space-between;}
+      #sorting>div>button{ background: rgb(5 110 76); border: none; border-radius: 0px 0px 10px 0px; }
+      #sorting>div:nth-child(2){ margin-bottom: -3px; background: rgb(255,255,255);background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5746673669467788) 46%, rgba(110,8,0,1) 70%); }
+      #sorting>div>select{height: 100%;margin: -4px;border: 2px solid gray;background-color: transparent;}
+      #sorting>div>input{ height: 92%; margin: 0px; border: 2px solid gray; background-color: transparent; color: white; padding-left: 20px; }
+      #sorting>div>input::placeholder { color: rgb(255, 255, 255); opacity: 1;}
+      #sorting>div>input:-ms-input-placeholder { color: rgb(255, 255, 255);}
+      #sorting>div>input::-ms-input-placeholder {color: rgb(255, 255, 255);}
+@media screen and (min-width:0px) and (max-width:1000px){
+  thead>tr>td:nth-child(3),tbody>tr>td:nth-child(3){ display: none;}
+}
+@media screen and (min-width:0px) and (max-width:600px){
+  #sorting{display: none;}
+  thead>tr>td:nth-child(4),tbody>tr>td:nth-child(4){ display: none;}
+}
+@media screen and (min-width:0px) and (max-width:400px){
+  thead>tr>td:nth-child(5),tbody>tr>td:nth-child(5){display: none;}
+  nav > a:nth-child(2){ padding: 0px;}
+  nav>a:nth-child(1){font-size: 20px;padding: 0px 8px 0px 8px;}
+  nav>a:nth-child(2){font-size: 20px;padding: 0px 8px 0px 8px;}
+  #next > button{font-size: 15px;}
+  h1{font-size: 20px;width: 100%;text-align: center;}
+  #btn1,#btn{height: 50px;}
+  #btn{display: flex;}
+  button,#btn{padding: 0px;display: flex;align-items: center;}
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="./index.html">Trending Eagle</a>
+      <a href="./Addproduct.html">Add Product</a>
+    </nav>
+    <div id="sorting">
+      <div><button onclick="clearfunction()">Clear Filter</button></div>
+      <div>
+        <select name="" id="sortbyprice">
+          <option value="">Sort By Price</option>
+          <option value="lowtohigh">Low To High</option>
+          <option value="hightolow">High To Low</option>
+        </select>
+        <select name="SubCategory" id="sortbycategory">
+          <option value="">Sort By Category</option>
+          <option value="T-Shirt">T-Shirt</option>
+          <option value="Tops">Tops</option>
+          <option value="Jeans">Jeans</option>
+          <option value="Belts">Belts</option>
+          <option value="Hats">Hats</option>
+          <option value="Hoodies">Hoodies</option>
+          <option value="Jackets">Jackets</option>
+          <option value="Shirts">Shirts</option>
+          <option value="Shorts">Shorts</option>
+          <option value="Sweaters">Sweaters</option>
+          <option value="Underwear">Underwear</option>
+          <option value="Wallets">Wallets</option>
+          <option value="Bags">Bags</option>
+          <option value="Jewelry">Jewelry</option>
+          <option value="Mask">Mask</option>
+          <option value="Shoes">Shoes</option>
+          <option value="Sunglasses">Sunglasses</option>
+          <option value="TomGirl">TomGirl</option>
+        </select>
+        <input type="number" placeholder="Search By ID only ..." id="searchbar">
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <td>Image</td>
+          <td>ID</td>
+          <td>Title</td>
+          <td>Price</td>
+          <td>SubCategory</td>
+          <td class="updata">Update</td>
+          <td class="delete">Delete</td>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div id="next">
+      <button id="back">Prev Page...</button
+      ><button id="nextt">Next Page...</button>
+    </div>
+    <div id="updatadata">
+      <h1>Your Product ID is :- <span id="undateidis"></span></h1>
+      <form method="post" name="google-sheet">
+        <input
+          type="text"
+          name="Title"
+          placeholder="Title of Product..."
+          id="name"
+        />
+        <input
+          type="number"
+          name="Price"
+          placeholder="Price of a Product..."
+          id="price"
+        />
+        <select name="Color" id="color">
+          <option value="">Color</option>
+          <option value="Navy">Navy</option>
+          <option value="Multi-colored">Multi-colored</option>
+          <option value="Grey">Grey</option>
+          <option value="Beige">Beige</option>
+          <option value="Black">Black</option>
+          <option value="Blue">Blue</option>
+          <option value="Brown">Brown</option>
+          <option value="Burgundy">Burgundy</option>
+          <option value="Coral">Coral</option>
+          <option value="Cream">Cream</option>
+          <option value="Green">Green</option>
+          <option value="Khaki">Khaki</option>
+          <option value="Maroon">Maroon</option>
+          <option value="Olive">Olive</option>
+          <option value="Orange">Orange</option>
+          <option value="Peach">Peach</option>
+          <option value="Pink">Pink</option>
+          <option value="Purple">Purple</option>
+          <option value="Red">Red</option>
+          <option value="Tan">Tan</option>
+          <option value="White">White</option>
+          <option value="Yellow">Yellow</option>
+        </select>
+        <input
+          type="text"
+          name="Image1"
+          placeholder="Past 1st Image URL..."
+          id="img1"
+        />
+        <input
+          type="text"
+          name="Image2"
+          placeholder="Past 2st Image URL..."
+          id="img2"
+        />
+        <input
+          type="text"
+          name="Image3"
+          placeholder="Past 3st Image URL..."
+          id="img3"
+        />
+        <input
+          type="text"
+          name="Image4"
+          placeholder="Past 4st Image URL..."
+          id="img4"
+        />
+        <select name="MainCategory" id="main">
+          <option value="">MainCategory</option>
+          <option value="Men">Men</option>
+          <option value="Women">Women</option>
+          <option value="WinterWear">WinterWear</option>
+        </select>
+        <select name="SubCategory" id="sub">
+          <option value="">SubCategory</option>
+          <option value="T-Shirt">T-Shirt</option>
+          <option value="Tops">Tops</option>
+          <option value="Jeans">Jeans</option>
+          <option value="Belts">Belts</option>
+          <option value="Hats">Hats</option>
+          <option value="Hoodies">Hoodies</option>
+          <option value="Jackets">Jackets</option>
+          <option value="Shirts">Shirts</option>
+          <option value="Shorts">Shorts</option>
+          <option value="Sweaters">Sweaters</option>
+          <option value="Underwear">Underwear</option>
+          <option value="Wallets">Wallets</option>
+          <option value="Bags">Bags</option>
+          <option value="Jewelry">Jewelry</option>
+          <option value="Mask">Mask</option>
+          <option value="Shoes">Shoes</option>
+          <option value="Sunglasses">Sunglasses</option>
+          <option value="TomGirl">TomGirl</option>
+        </select>
+        <input
+          type="text"
+          name="Description"
+          placeholder="Small Description about Product..."
+          id="des"
+        />
+        <button id="btn1">Cancel</button>
+        <button type="submit" id="btn" name="submit">Update to SITE</button>
+      </form>
+    </div>
+  </body>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="./scripts/Adminfile.js"></script>
+  <script>
+    let form = document.querySelector("form");
+    let next = document.getElementById("nextt");
+    let back = document.getElementById("back");
+    let updatadata = document.getElementById("updatadata");
+    let tbody = document.getElementById("tbody");
+    let btnnn1 = document.getElementById("btn1");
+    let btn = document.getElementById("btn");
+    let undateidis = document.getElementById("undateidis");
+    let sortbyprice = document.getElementById("sortbyprice");
+    let sortbycategory = document.getElementById("sortbycategory");
+    let searchbar = document.getElementById("searchbar");
+    var count = 20;
+    var finaldata;
+    var sortfetchdata ;
+    var length;
+    let fetchdata = fetch(adminsidefetchurl);
+    fetchdata
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        finaldata = data.data;
+         sortfetchdata = data.data;
+        length = data.data.length;
+        localStorage.setItem("clearsorting",JSON.stringify(data.data));
+        upendfatafunction(data.data);
+      });
+    function upendfatafunction(arr) {
+      tbody.innerHTML = null;
+      for (let a = count - 20; a < count; a++) {
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let div = document.createElement("div");
+        div.setAttribute("class", "adminsiseimg");
+        let img = document.createElement("img");
+        img.setAttribute("src", arr[a].Image1);
+        let td2 = document.createElement("td");
+        td2.innerText = arr[a].__id;
+        let td3 = document.createElement("td");
+        td3.innerText = arr[a].Title;
+        let td4 = document.createElement("td");
+        td4.innerText = arr[a].Price;
+        let td5 = document.createElement("td");
+        td5.innerText = arr[a].SubCategory;
+        let td6 = document.createElement("td");
+        td6.innerText = "Update";
+        let td7 = document.createElement("td");
+        td7.innerText = "Delete";
+        td7.setAttribute("class", "delete");
+        div.append(img);
+        td1.append(div);
+        tr.append(td1, td2, td3, td4, td5, td6, td7);
+        tbody.append(tr);
+        td7.addEventListener("click", () => {
+          DeleteProduct(arr[a].__id + 1);
+        });
+        td6.addEventListener("click", () => {
+          upaaddttaa(
+            arr[a].__id + 1,
+            arr[a].Title,
+            arr[a].Price,
+            arr[a].Color,
+            arr[a].Image1,
+            arr[a].Image2,
+            arr[a].Image3,
+            arr[a].Image4,
+            arr[a].MainCategory,
+            arr[a].SubCategory,
+            arr[a].Description
+          );
+        });
+      }
+    }
+    //To Delete Row
+    function DeleteProduct(Id) {
+      let promptnum = parseInt(prompt("Please Enter product ID to Confirm"));
+      if (promptnum + 1 === Id) {
+        console.log(Id);
+        swal("Processing...");
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
+          method: "delete",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+        fetch(`${deleteapilink}${Id}`, requestOptions)
+          .then((response) => response.text())
+          .then((result) => {
+            swal("Your Product has Successfully Deleted...");
+            setTimeout(() => {
+              location.href = "./admin.html";
+            }, 2000);
+          })
+          .catch((error) => swal("error", error));
+      } else {
+        swal("Sorry Id Could'nt MATCHED !");
+      }
+    }
+
+    //  update part
+    function upaaddttaa(
+      ud,
+      title,
+      price,
+      color,
+      im1,
+      im2,
+      im3,
+      im4,
+      ma,
+      su,
+      de
+    ) {
+      updatadata.style.display = "flex";
+      updatadata.style.backgroundColor = "#000000cc";
+      console.log(ud, title, price, color, im1, im2, im3, im4, ma, su, de);
+      undateidis.innerText = ud - 1;
+      form.name.value = title;
+      form.price.value = price;
+      form.color.value = color;
+      form.img1.value = im1;
+      form.img2.value = im2;
+      form.img3.value = im3;
+      form.img4.value = im4;
+      form.main.value = ma;
+      form.sub.value = su;
+      form.des.value = de;
+      btn.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (
+          form.name.value != "" &&
+          form.price.value != "" &&
+          form.color.value != "" &&
+          form.img1.value != "" &&
+          form.img2.value != "" &&
+          form.img3.value != "" &&
+          form.img4.value != "" &&
+          form.main.value != "" &&
+          form.sub.value != "" &&
+          form.des.value != ""
+        ) {
+          swal("Processing...");
+          let obj = {
+            row_id: ud,
+            Title: form.name.value,
+            Price: form.price.value,
+            Color: form.color.value,
+            Image1: form.img1.value,
+            Image2: form.img2.value,
+            Image3: form.img3.value,
+            Image4: form.img4.value,
+            MainCategory: form.main.value,
+            SubCategory: form.sub.value,
+            Description: form.des.value,
+          };
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+          var requestOptions = {
+            method: "put",
+            headers: myHeaders,
+            redirect: "follow",
+            body: JSON.stringify(obj),
+          };
+
+          fetch(updatedatafromapilink, requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+              swal("Product has succesfully updated...");
+              setTimeout(() => {
+                updatadata.style.display = "none";
+                updatadata.style.backgroundColor = "#000000cc";
+              }, 2000);
+            })
+            .catch((error) => swal("Please try again"));
+        } else {
+          swal("Please Provide Complete Information....!");
+        }
+      });
+    }
+
+    // pop up of update;
+    btnnn1.addEventListener("click", () => {
+      updatadata.style.display = "none";
+      updatadata.style.backgroundColor = "#000000cc";
+    });
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+    });
+    next.addEventListener("click", () => {
+      if (count + 20 < length) {
+        count += 20;
+        upendfatafunction(sortfetchdata);
+      } else {
+        // count = length;
+        upendfatafunction(sortfetchdata);
+      }
+    });
+    back.addEventListener("click", () => {
+      if (count - 20 > 20) {
+        count -= 20;
+        upendfatafunction(sortfetchdata);
+      } else {
+        count = 20;
+        upendfatafunction(sortfetchdata);
+      }
+    });
+    sortbyprice.addEventListener("change",()=>{
+      if(sortbyprice.value == "lowtohigh"){
+       let arr = sortfetchdata.sort((a,b)=>a.Price-b.Price);
+       count = 20;
+       length = arr.length;
+       upendfatafunction(arr);
+      }
+      else{
+        let arr = sortfetchdata.sort((a,b)=>b.Price-a.Price);
+       count = 20;
+       length = arr.length;
+       upendfatafunction(arr);
+      }
+    })
+    function clearfunction(){
+      let arr = JSON.parse(localStorage.getItem("clearsorting"))||[];
+      count = 20;
+      length = arr.length;
+      sortfetchdata = arr;
+      sortbyprice.value = "";
+      sortbycategory.value = "";
+      searchbar.value = "";
+      upendfatafunction(arr);
+    }
+    sortbycategory.addEventListener("change",()=>{
+      let arr = [];
+     for(let a = 0;a<finaldata.length;a++){
+      if(finaldata[a].SubCategory == sortbycategory.value){
+        arr.push(finaldata[a]);
+      }
+     }
+      sortfetchdata = arr;
+      length = arr.length;
+      count = 20;
+      upendfatafunction(sortfetchdata)
+    })
+    searchbar.addEventListener("keypress",(event)=>{
+      if (event.key === "Enter") {
+        event.preventDefault();
+        let arr = JSON.parse(localStorage.getItem("clearsorting"))||[];
+        let searchid = +(searchbar.value);
+        if(searchid < arr.length){
+          tbody.innerHTML = null;
+          searchid = arr.length-searchid;
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let div = document.createElement("div");
+        div.setAttribute("class", "adminsiseimg");
+        let img = document.createElement("img");
+        img.setAttribute("src", arr[searchid].Image1);
+        let td2 = document.createElement("td");
+        td2.innerText = arr[searchid].__id;
+        let td3 = document.createElement("td");
+        td3.innerText = arr[searchid].Title;
+        let td4 = document.createElement("td");
+        td4.innerText = arr[searchid].Price;
+        let td5 = document.createElement("td");
+        td5.innerText = arr[searchid].SubCategory;
+        let td6 = document.createElement("td");
+        td6.innerText = "Update";
+        let td7 = document.createElement("td");
+        td7.innerText = "Delete";
+        td7.setAttribute("class", "delete");
+        div.append(img);
+        td1.append(div);
+        tr.append(td1, td2, td3, td4, td5, td6, td7);
+        tbody.append(tr);
+        td7.addEventListener("click", () => {
+          DeleteProduct(arr[searchid].__id + 1);
+        });
+        td6.addEventListener("click", () => {
+          upaaddttaa(
+            arr[searchid].__id + 1,
+            arr[searchid].Title,
+            arr[searchid].Price,
+            arr[searchid].Color,
+            arr[searchid].Image1,
+            arr[searchid].Image2,
+            arr[searchid].Image3,
+            arr[searchid].Image4,
+            arr[searchid].MainCategory,
+            arr[searchid].SubCategory,
+            arr[searchid].Description
+          );
+        });
+        }
+        else{
+          swal("NO Data Present ...!");
+        }    
+      }
+    })
+  </script>
+</html>
