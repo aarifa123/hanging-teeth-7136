@@ -1,8 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: 300;
+    text-shadow: 0px 1px 3px rgb(0 0 0 / 35%);
+}
+nav{
+    height: 85px;
+    box-shadow: 3px 3px 5px 7px rgba(191,191,191,0.32);
+    -webkit-box-shadow: -1px -5px 5px 7px rgb(191 191 191 / 32%);
+-moz-box-shadow: 3px 3px 5px 7px rgba(191,191,191,0.32);
+}
 .eagle{
-    width: 100%;
     height: auto;
+    display: flex;
+    margin: 30px 60px;
 }
 .edit{
     display: flex;
     justify-content:space-between;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    font-size: 10px;
+}
+.your-Cart{
+    display: block;
+    margin-right: 40px;
+    width: 75%;
+
+}
+.cart{
+    border: 1px solid rgba(128, 128, 128, 0.324);
+    height: 65px;
+    padding: 20px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.shipping{
+    margin: 30px 0px;
+    border: 1px solid rgba(128, 128, 128, 0.334);
+    height: 65px;
+    padding: 20px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.payment{
+    border: 1px solid rgba(128, 128, 128, 0.345);
+    height: 25px;
+    padding: 20px;
+    font-size: 10px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.coupon{
+    display: flex;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 25px;
+    align-items: center;
+    border: 1px dashed #000;
+}
+img{
+    height: 100%;
+}
+.total{
+    padding-top: 10px;
+}
+.shipping-details{
+    font-size: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+.order{
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.order>h1{
+    margin-bottom: 15px;
+    font-weight: 900;
+    font-size: 22px;
+}
+.order>p{
+    padding: 10px 0px;
+}
+.order>div{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0px;
+}
+.order>div:nth-child(5){
+    margin: 10px 0px 20px 0px;
+    padding-top: 10px;
+    border-top: 2px solid black;
+}
+#save-payment{
+    display: flex;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 25px;
+    align-items: center;   
+}
+#save-payment>p{
+    font-size: 12px;
+}
+button{
+    padding: 10px 40px;
 }
