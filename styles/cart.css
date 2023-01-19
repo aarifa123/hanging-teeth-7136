@@ -116,3 +116,71 @@ img{
 button{
     padding: 10px 40px;
 }
+.popup{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    margin: 0px 30%;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+#popupp{
+    width: 100vw;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    /* align-items: center; */
+}
+#shpinggrid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#code,#F_name{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#checkbtn,#L_Name{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+#mobile,#add_1,#land_mark{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#checkbox{
+    display: flex;
+}
+#saveus{
+    display: flex;
+    /* justify-content: space-between; */
+}
+#savebtn{
+    width: 80%;
+    margin: 0px 30px;
+    background-color: black;
+    padding: 12px 0px;
+    color: white;
+}
+#closebar{
+    display: flex;
+    justify-content: space-between;
+    
+}
+#close-btn{
+    background-color: black;
+    color: #f2f2f2;
+    width: 20px;
+    border-radius: 50px;
+    /* align-items: center; */
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    /* margin: auto; */
+}
+#F_name,#l-Name,#mobile,#add_1,#land_mark
+{
+height: 30px;
+}
+input{
+    
+}

@@ -31,9 +31,56 @@
                 <h2>2.SHIPPING DETAILS</h2>
             </div>
             <div>
-                <button>ADD NEW SHIPPING ADDRESS</button>
+                <button id="btun">ADD NEW SHIPPING ADDRESS</button>
             </div>
         <!-- address part here -->
+        <div id="popupp">
+            <div class="popup">
+           
+           <div class="title">
+               <div id="closebar">
+                <h2>add shipping address</h2>
+                <div id="close-btn">&times;</div>
+               </div>
+               <div class="popup-front">
+                  <div id="shpinggrid">
+                  <input type="number" id="code" placeholder="Enter pincode*">
+                  <button id="checkbtn">check</button>
+               
+           
+                   <input type="text" id="F_name" placeholder="firstname*">
+                   <input type="text" id="l_Name" placeholder="lastname*">
+           
+           
+       
+                   <input type="number" id="mobile" placeholder="mobile Number*">
+       
+               
+           
+                   <input type="text" id="add_1" placeholder="address Line 1">
+               
+               
+               <input type="text" id="land_mark" placeholder="Land_mark">
+         <input type="text" id="city" placeholder="City*">
+         <input type="text" id="state" placeholder="State*">
+         </div>
+           <div id="checkbox">
+               <input type="checkbox" id="scales" name="make" checked>
+               <label for="make">Make this my default address</label>
+             </div>
+             <div id="saveus">
+                   <p>Save As</p>
+                   <button>home</button>
+                   <button>office</button>
+                   <button>Other</button>
+             </div>
+             <div>
+             <button id="savebtn">SAVE ADDRESS</button>
+           </div>
+           </div>
+           </div>
+            </div>
+       </div>
         </div>
 
         <div class="payment">
@@ -71,4 +118,5 @@
 
 </div>
 </body>
+<script src="./scripts/cart.js"></script>
 </html>
