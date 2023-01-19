@@ -6,8 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>create a new account</title>
 </head>
+<style>body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
 <body>
     <form id="form">
+      <label>name:</label>
+        <input type="text" id="name" required>
         <label>Username:</label>
         <input type="text" id="username" required>
         <br>
@@ -22,49 +62,55 @@
        
 </body>
 <script>
-  let form=document.addEventListener("submit",(e)=>{
-    e.preventDefault()
-    let username = document.getElementById("username").value;
-let password = document.getElementById("password").value;
-
-  
-  let newUser = {
-    username: username,
-    password: password
-    
-  };
-
-  
-  fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newUser)
-  })
+  let form = document.getElementById("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let name = document.getElementById("name").value;
+  if (username === "" || password === ""||name==="") {
+    alert("Please fill in all the fields.");
+    return;
+  }
+//check user already exits
+  fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+  
+      let existingUsername = data.find((user) => user.username === username);
+      let existingname = data.find((user) => user.name === name);
+      if (existingUsername ||existingname) {
+        alert(`username  is already exist .Please,choose different  name`);
+        return;
+      }
+      // else if(){
+      //   alert(` name is already exist .Please,choose different name`);
+      //   return;
+      // }
+
+      let newUser = {
+        name:name,
+        username: username,
+        password: password,
+      };
+
+      //make post req
+      fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
     });
+});
 
-
-  })
-
-
-// fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/23", {
-//   method: "DELETE"
-// })
-//   .then(response => {
-//     if (response.ok) {
-//       console.log("Item deleted successfully");
-//     } else {
-//       throw new Error("Error deleting item");
-//     }
-//   })
-//   .catch(error => {
-//     console.error(error);
-//   });
 
     
 </script>
+
 </html>
