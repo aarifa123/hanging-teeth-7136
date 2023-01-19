@@ -1,8 +1,8 @@
 let username=document.getElementById("username")
 let pass=document.getElementById("password")
-let form=document.getElementById("signin-form")
-form.addEventListener("submit",(e)=>{
-    e.preventDefault()
+let form=document.getElementById("signin")
+form.addEventListener("click",()=>{
+    // e.preventDefault()
     fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI")
     .then(res=>{
         return res.json()
@@ -16,9 +16,10 @@ form.addEventListener("submit",(e)=>{
                 user=data[i]
                 break;
             }
-            else{
-                alert ("UserID or password not match")
-            }
+            else if (username.value === "" || pass.value === "") {
+                alert("Please fill in the input fields.");
+              }
+              
            
         }
         console.log(user)
