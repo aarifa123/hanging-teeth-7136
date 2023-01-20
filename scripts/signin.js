@@ -41,7 +41,7 @@ let form=document.getElementById("signin")
 let loginbutton=document.getElementById("show-login")
 let Name=document.getElementById("name")
 form.addEventListener("click",()=>{
-    // e.preventDefault()
+    e.preventDefault()
     fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI")
     .then(res=>{
         return res.json()
