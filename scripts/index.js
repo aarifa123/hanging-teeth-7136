@@ -10,7 +10,7 @@ dropDown.forEach((item)=>{
 
    localStorage.setItem("productInfo",JSON.stringify(obj));
    console.log(obj);
-   window.location.href = "/products.html"
+   window.location.href = "./products.html"
   })
    
 })
