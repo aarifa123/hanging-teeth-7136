@@ -1,3 +1,7 @@
+function redirecttohomepage(){
+  location.href = "./index.html"
+}
+
 let dropDown =document.querySelectorAll(".drop-down>li>a");
 //console.log(dropDown);
 dropDown.forEach((item)=>{
@@ -28,7 +32,7 @@ fetch("https://script.googleusercontent.com/macros/echo?user_content_key=OWlD6cV
 .then((data)=>{
     let req=data.data;
     console.log(req);
-
+    localStorage.setItem("indextoproduct",JSON.stringify(data.data));
     inputText.addEventListener("change",()=>{
        let searchVal=inputText.value;
        console.log(searchVal)

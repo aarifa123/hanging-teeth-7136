@@ -5,11 +5,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/landing.css">
+    <link rel="stylesheet" href="./styles/scrolebar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <style>
+        #body{
+            margin-top: 90px;
+        }
+    </style>
 </head>
 <body>
-    <div id="nav">
-
-    </div>
+    <nav>
+        <div class="wrapper">
+           
+            <div id="navTop">
+    
+           <a href="">E-Gift Card</a> 
+           <a href="">Store Locator</a>
+           <a href="">Track Order</a>
+           <a href="">My AEO</a> 
+           <a href="./cart.html">Cart</a> 
+        </div>
+        <div id="onlyfornavstyle">
+            <div class="logo">
+                <img  src="./images/logo.png" onclick="redirecttohomepage()" alt="">
+            </div>
+            <div id="onlyfornavstyl">
+            <ul class="section" id="nav_buttons">
+                <li class="sub-menu" id="men"><a href="https://course.masaischool.com/lectures">Men</a>
+                    <ul class="drop-down" >
+                      
+                         <li><a href="/products.html"  data-subc="T-Shirt" data-gend="Men">T-Shirt</a></li>
+                        <li><a href=""  data-subc="Shirts" data-gend="Men" >Shirts</a></li>
+                        <li><a href="" data-subc="Jackets" data-gend="Men">Jackets</a></li>
+                        <li><a href="" data-subc="Hoodies" data-gend="Men">Hoodies</a></li>
+                    <li><a href="" data-subc="Jeans" data-gend="Men">Jeans</a></li>
+                    <li><a href="" data-subc="Shorts" data-gend="Men">sorts</a></li>
+                    <li><a href="" data-subc="Sweaters" data-gend="Men"> Sweaters</a></li>
+                
+            </ul>
+                </li>
+                <li class="sub-menu" id="women"> <a href="">Women</a>
+                    <ul class="drop-down">
+                        
+                        <li><a href=""data-subc="T-Shirt" data-gend="Women" >T-Shirt</a></li>
+                        <li><a href=""data-subc="Jackets" data-gend="Women">Jackets</a></li>
+                        <li><a href="" data-subc="Hoodies" data-gend="Women">Hoodies </a></li> 
+                        <li><a href="" data-subc="Jeans" data-gend="Women">Jeans</a></li>
+                        <li><a href="" data-subc="Shorts" data-gend="Women">Shorts</a></li>
+                        <li><a href="" data-subc="Sweaters" data-gend="Women"> Sweaters</a></li>
+                       
+            </ul>
+                </li>
+                <li class="sub-menu"> <a href="">Jeans</a>
+                    <ul class="drop-down">
+                        
+                        <li><a href="" data-subc="Jeans" data-gend="">Skinny Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Slim Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Straight Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Airflex Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Bootcat Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Athletic fit Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Ripped Jeans</a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">High rise Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Cropped Jeans </a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Mom</a></li>
+                        <li><a href="" data-subc="Jeans" data-gend="">Ripped Jeans</a></li>
+            </ul>
+                </li>
+                <li class="sub-menu"> <a href="">sale</a>
+                  
+                </li>
+                <li class="sub-menu"><a href="">Winter Wear</a>
+                    <ul  class="drop-down">
+                       
+                        <li><a href="" data-subc="Hoodies" data-gend="Winterwear"> Hoodies </a></li>
+                        <li><a href="" data-subc="Jackets" data-gend="Winterwear">Jackets </a></li>
+                        <li><a href="" data-subc="Sweaters" data-gend="Winterwear">Sweaters </a></li>
+                        
+            </ul>
+        </li>
+       
+            </ul>
+            <input id="search" type="text" placeholder="Search Here">
+            </div>
+            </div>
+    
+    
+                    </div>
+                    <a href="#" id="cartlogoidi"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
+                    <div id="loginidi" ><img src="./images/login.jpg" id="loginid" alt=""></div>
+                    </div>
+                    </nav>
+    
+                    <!-- Nav Bar End here -->
+    
+                    <div class="popup">
+                        <h1 id="welcome-text">WELCOME TO    </h1>
+             
+            <h2 id="shop-name-text">TRENDING EAGLE</h2>
+               
+            <h4 id="detail-text">Login / Register with us to get latest updates and manage your orders</h4>
+                    <div class="close-btn">&times;</div>
+                    <div class="form">
+                        <div class="form-element">
+                            <!-- <label for="username"><p>USER NAME</p></label> -->
+                            <input type="text" id="name" placeholder="Enter Name">
+                            </div>
+                    <div class="form-element">
+                    <!-- <label for="username"><p>USER NAME</p></label> -->
+                    <input type="text" id="username" placeholder="Enter Username">
+                    </div>
+                    <div class="form-element"> 
+                    <!-- <label for="password"><p>PASSWORD</p></label> -->
+                    <input type="password" id="password" placeholder="Enter Password">
+                    </div>
+                    <div class="form-element">
+                    <input type="checkbox" id="remember-me" >
+                    <label for="remember-me"  ><p id="remember-me">REMEMBER ME</p></label>
+                    </div>
+                    <div class="form-element">
+                    <button id="signin">SIGN IN</button>
+                    
+                    
+                    </div>
+                    <div class="form-element">
+                    <a href="#">Forgot Password?</a>
+                    
+                    </div>
+                    <hr>
+                    <div id="createannewaccount">
+                        <p>Don't have an account?
+                            No problem...</p>
+                         <a href="./signup.html">    <p>Create Account</p></a>
+                    </div>
+                    </div>
+                    </div> 
+                    <!-- here nav bar ends -->
     <div id="body">
         <div>
             <div>Home</div><span>/</span>
@@ -90,11 +224,72 @@
             <div></div>
         </div>
     </div>
-    <div id="footer">
+    <footer id="footer">
+        <div id="footerone">
+            <div>Want 25% off your purchase? <span> Refer A friend!</span></div>
+            <div>A gift that always fits. <span> Shop E-Gift Card</span></div>
+        </div>
+        <div id="footermaindiv">
+            <div>
+                <div class="footerimg">
+                    <img src="./images/payment.png" alt="">
+                    <p>PAYMENT OPTIONS Credit,Debit,Paytm Wallet & more.</p>
+                </div>
+                <div class="footerimg">
+                    <img src="./images/location.png" alt="">
+                    <p>STORE LOCATOR</p>
+                </div>
+                <div class="footerimg">
+                    <img src="./images/email.jpg" alt="">
+                    <p>EMAIL SIGN UP</p>
+                </div>
+                <div class="footerimg">
+                    <img src="./images/BLOGS.png" alt="">
+                    <p>AEO BLOGS</p>
+                </div>
+            </div>
+            <div id="footerseconddiv">
+                <div class="footerimg">
+                    <img src="./images/track.png" alt="">
+                    <p>TRACK ORDER</p>
+                </div>
+                <div>ABOUT AEO</div>
+                <div>FREQUENTLY ASKED QUESTIONS</div>
+                <div>RETURNS POLICY</div>
+                <div>CANCELLATION POLICY</div>
+                <div>SHIPPING POLICY</div>
+                <div>TERMS AND CONDITIONS OF USE</div>
+                <div>OFFER T&C</div>
+                <div>PRIVACY POLICY</div>
+                <div>SITE MAP</div>
+            </div>
+            <div class="footermain3">
+                <div><img src="./images/question.png" alt=""><span> HAVE A QUESTION ?</span></div>
+                <div><img src="./images/suport.png" alt=""><span>CUSTOMER SUPPORT</span> </div>
+                <div><img src="./images/facebook.png" alt=""><span>FOLLOW US</span> </div>
+            </div>
+        </div>
 
+    </footer>
+    <!-- cpyorightsection -->
+    <div id="copyright">
+        © 2023 All Rights Reserved.
     </div>
     
 </body>
 <script src="./scripts/singleProduct.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="./scripts\index.js"></script>
+<script src="./scripts\signin.js"></script>
+<script>
+    
+    document.querySelector("#loginidi").addEventListener("click",function(){
+        document.querySelector(".popup").classList.add("active")
+        
+            })
+        
+            document.querySelector(".popup .close-btn").addEventListener("click",function(){
+        document.querySelector(".popup").classList.remove("active");
+        
+            })
+</script>
 </html>

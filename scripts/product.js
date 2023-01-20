@@ -22,59 +22,53 @@ let sortingCopy = [];
 //============================================= event listners start here =================================================//  
 
 window.addEventListener("load",()=>{
-    fetch(url)
-    .then((res)=>{
-        return res.json();
-    })
-    .then((data)=>{
-        // console.log(data.data);
-        filteredData = [...data.data];
-        globaldata = [...data.data] ;
-        sortingCopy = [...data.data] ; 
-        
-        let LSdata = JSON.parse(localStorage.getItem("productInfo")) ;
+    let indexdata = JSON.parse(localStorage.getItem("indextoproduct"))||[];
+    filteredData = [...indexdata];
+    globaldata = [...indexdata] ;
+    sortingCopy = [...indexdata] ; 
+    
+    let LSdata = JSON.parse(localStorage.getItem("productInfo")) ;
 
-       
+   
 
-        let reqData = filteredData.filter((element,index)=>{
-            if(LSdata.gender === "" && LSdata.subCat === "Jeans"){
-                if(element.SubCategory === "Jeans"){
-                    return true ;
-                }
-            }else if(LSdata.gender === "Winterwear"){
-                if(element.SubCategory === LSdata.subCat){
-                    return true;
-                }
-            }else if(LSdata.gender === "Men"){
-                if(element.SubCategory === LSdata.subCat && element.MainCategory === "Men"){
-                    return true;
-                }
-            }else if(LSdata.gender === "Women"){
-                if(element.SubCategory === LSdata.subCat && element.MainCategory === "Women"){
-                    return true;
-                }
+    let reqData = filteredData.filter((element,index)=>{
+        if(LSdata.gender === "" && LSdata.subCat === "Jeans"){
+            if(element.SubCategory === "Jeans"){
+                return true ;
             }
-        })
-        sortingCopy = reqData;
-        let numofpages = reqData.length/cardsperpage;
-
-        // let tobj = localStorage.getItem("")
-
-        // reqData = globaldata.filter((rl,ind)=>{
-        //     if(tobj.gender === el.gender && tobj.subcategory = el.subcategory){
-        //         return true ;
-        //     }
-        // })
-
-        renderDOM(reqData.slice(0,cardsperpage))
-        
-        renderPagination(numofpages,reqData);
-        
-        // console.log(filteredData)
-       
-        // renderDOM(filteredData)
-        
+        }else if(LSdata.gender === "Winterwear"){
+            if(element.SubCategory === LSdata.subCat){
+                return true;
+            }
+        }else if(LSdata.gender === "Men"){
+            if(element.SubCategory === LSdata.subCat && element.MainCategory === "Men"){
+                return true;
+            }
+        }else if(LSdata.gender === "Women"){
+            if(element.SubCategory === LSdata.subCat && element.MainCategory === "Women"){
+                return true;
+            }
+        }
     })
+    sortingCopy = reqData;
+    let numofpages = reqData.length/cardsperpage;
+
+    // let tobj = localStorage.getItem("")
+
+    // reqData = globaldata.filter((rl,ind)=>{
+    //     if(tobj.gender === el.gender && tobj.subcategory = el.subcategory){
+    //         return true ;
+    //     }
+    // })
+
+    renderDOM(reqData.slice(0,cardsperpage))
+    
+    renderPagination(numofpages,reqData);
+    
+    // console.log(filteredData)
+   
+    // renderDOM(filteredData)
+    
 })
 
 

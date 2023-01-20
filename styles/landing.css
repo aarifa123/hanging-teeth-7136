@@ -25,10 +25,29 @@ body{
     width: 40px;
     margin-bottom: -6px;
     margin-right: -15px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 #cartlogoid{
     width: 44px;
+}
+#cartlogoidi{
     display: none;
+    right: 75px;
+    top: 45px;
+}
+#loginidi{
+    position: absolute;
+    right: 25px;
+    top: 45px;
+  
+}
+#button{
+    margin-top: -120px;
+    margin-bottom: 90px;
 }
 @media screen and (min-width:0px) and (max-width:1350px){
     #button_1{
@@ -43,7 +62,7 @@ body{
         margin-top: -200px!important;
     }
     #button{
-        margin-top: -200px;
+        margin-top: -75px;
         margin-bottom: 55px;
     }
 }
@@ -55,7 +74,7 @@ body{
         margin-top: -200px!important;
     }
     #button{
-        margin-top: -235px;
+        margin-top: -109px;
         margin-bottom: 90px;
     }
 }
@@ -68,7 +87,7 @@ body{
         margin-top: -200px!important;
     }
     #button{
-        margin-top: -235px;
+        margin-top: -114px;
         margin-bottom: 90px;
     }
 }
@@ -81,8 +100,11 @@ body{
         margin-top: -200px!important;
     }
     #button{
-        margin-top: -235px;
+        margin-top: -120px;
         margin-bottom: 90px;
+    }
+    nav .wrapper .section{
+        margin-left: 0px;
     }
 }
 @media screen and (min-width:0px) and (max-width:1100px){
@@ -94,13 +116,17 @@ body{
         margin-top: -200px!important;
     }
     #button{
-        margin-top: -203px;
+        margin-top: -85px;
         margin-bottom: 50px;
     }
 }
 @media screen and (min-width:0px) and (max-width:999px){
     #navTop{
         display: none;
+    }
+    #onlyfornavstyle{
+        display: block;
+        width: 90%;
     }
     nav .wrapper .section{
         margin-left: 0px;
@@ -110,7 +136,10 @@ body{
     }
     #cartlogoid{
         display: block;
-        margin: 0px 21px -6px 21px;
+    }
+    #cartlogoidi{
+        display: flex;
+        position: absolute;
     }
     #navflex{
         margin: 0px;
@@ -133,11 +162,27 @@ body{
      .logo > img{
         margin-top: 0px;
      }
+     .logo{
+        position: absolute;
+     }
+     #onlyfornavstyl{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 55px;
+        margin-left: 15px;
+     }
 }
 @media screen and (min-width:0px) and (max-width:1030px){
     #button_1{
         margin-top: -677px!important;
         margin-bottom: 570px!important;
+    }
+}
+@media screen and (min-width:0px) and (max-width:900px){
+    #search{
+        position: absolute;
+        margin-top: -50px;
+        margin-right: -63%;
     }
 }
 @media screen and (min-width:0px) and (max-width:850px){
@@ -160,26 +205,52 @@ body{
     }
     #search{
         float: right;
+        margin-right: -50%;
      }
      #cartlogoidi{
         position: absolute;
-        display: none;
+        right: 50px;
      }
      #loginidi{
         position: absolute;
-        display: none;
+        right: 5px;
+     }
+     nav .wrapper .section li a{
+        padding: 6px 13px;
+     }
+     .popup{
+        width: 300px;
+     }
+     .popup .form .form-element input[type="text"], .popup .form .form-element input[type="password"]{
+        width: 93%;
      }
 }
 @media screen and (min-width:0px) and (max-width:500px){
     .logo{
         display: none;
     }
-    nav .wrapper .section li a{
-        padding: 0px 20px;
+    #onlyfornavstyl{
+        margin-left: 0px;
+        justify-content: flex-start;
     }
+    .popup{
+        width: 250px;
+     }
 }
 @media screen and (min-width:0px) and (max-width:400px){
     nav .wrapper .section li a{
         padding: 0px 10px;
     }
+    #cartlogoidi{
+        top: 0;
+    }
+    #loginidi{
+        top: 1px;
+    }
+  li{
+    max-width: max-content;
+  }
+  .popup{
+    width: 250px;
+ }
 }
