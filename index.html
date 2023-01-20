@@ -12,184 +12,6 @@
         <link rel="stylesheet" href="./styles/footer.css">
         <link rel="icon" type="image/x-icon" href="./images/logo.png">
         <style>
-
-#page>img:nth-child(1){
-    margin-bottom: -10%;
-}
-#page>img:nth-child(2){
-    margin-top: 20px;
-} */
-#button{
-margin-top: -280px;
-margin-bottom: 135px;
-}
-
-button{
-    margin-bottom: 20px;
-    border-radius: 20px;
-    background-color: azure;
-    height: 50px;
-    width: 280px;
-    color: red;
-    margin-left:60%;
-    padding: 20px;
-    border: 0px;
-}
-#button_1{
-    margin-top: -950px;
-margin-bottom: 870px;
-display: flex;
-justify-content: center;
-}  
-.center{
-        position: absolute;
-        top:50%;
-        left:50%;
-    transform: translate(-50%,-50%);
-    }
-    .center button{
-        padding: 10px 20px;
-        font-size: 15px;
-        font-weight: 600;
-        color: #222;
-        background: #f5f5f5;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    .popup{
-        position:absolute;
-        top:-150%;
-        left:50%;
-        opacity: 0;
-    transform: translate(-50%,-50%) scale(1.25);
-    width:500px;
-    padding:20px 30px;
-    background: #fff;
-    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
-    /* border-radius: 10px; */
-    transition:top 0ms ease-in-out 200ms ,
-                opacity 200ms ease-in-out 0ms,
-                transform 200ms ease-in-out 0ms;
-     
-    }
-    .popup.active{
-        top:50%;
-        opacity: 1;
-    transform: translate(-50%,-50%) scale(1);
-    transition:top 0ms ease-in-out 0ms ,
-                opacity 200ms ease-in-out 0ms,
-                transform 200ms ease-in-out 0ms
-    }
-    .popup .close-btn{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 15px;
-    background:#888 ;
-    color: #eee;
-    text-align: center;
-    line-height: 15 px;
-    border-radius: 15px;
-    cursor: pointer;
-    
-    }
-    #signin{
-        text-align: center;
-        margin: auto;
-       
-    }
-    /* .popup .form h2{
-        text-align: center;
-        color: #222;
-        margin: 10px 0px 20px;
-        font-size: 25px;
-    } */
-    .popup .form .form-element{
-        margin: 15px 0px;
-    }
-    /* .popup .form .form-element label {
-        font-size: 17px;
-        color: #222;
-        text-align:left;
-        
-        
-    }
-    .popup .form .form-element label p{
-        margin-bottom: 10px;
-    } */
-    #remember-me{
-        margin-top: 5px;
-        text-align: right;
-    }
-    .popup .form .form-element input[type="text"],.popup .form .form-element input[type="password"]{
-        margin-top:0px;
-        width: 100%;
-        padding:10px ;
-        border: 1px solid #aaa;
-        /* border-radius: 5px; */
-    }
-    .popup .form .form-element input[type="checkbox"] {
-    margin-right:5px ;
-   margin: auto;
-    }
-    .popup .form .form-element button{
-        width:100%;
-        height:50px;
-        border: none;
-        outline: none;
-    font-size:15px ;
-    background:#222;
-    color:#f5f5f5;
-    /* border-radius: 10px; */
-    cursor: pointer;
-    }
-    .popup .form .form-element a{
-        display: block;
-        text-align:left;
-        font-size: 15px;
-        color: #1a79ca;
-        text-decoration: none;
-        font-weight: 600px;
-    
-    }
-    .center{
-margin-top: -330px;
-
-margin-left: 50px;
-
-    }
-
-    #welcome-text{
-        letter-spacing: 0.1em;
-    text-align: left;
-    font-weight: 400;
-    margin-bottom: 0%;
-}
-#shop-name-text{
-    text-align: left;
-    letter-spacing: 0.1em;
-  line-height: 0%;
-  margin-left: 0%;
-  font-family: Arial, Helvetica, sans-serif;
-
-}
-.container{
-    margin-top: 100px;
-    border: 2PX SOLID RED;
-    width: 80%;
-    margin-left: 100px;
-}
-#detail-text{
-margin-top: 50px;
-text-align: left;
-/* letter-spacing: 0.1em; */
-    /* margin-left: 30px; */
-}
-#createannewaccount{
-text-align: left;
-}
     </style>
     </head>
     <body>
@@ -205,13 +27,15 @@ text-align: left;
        <a href="">Store Locator</a>
        <a href="">Track Order</a>
        <a href="">My AEO</a> 
-       <a href="">Cart</a> 
+       <a href="./cart.html">Cart</a> 
     </div>
+    <div id="onlyfornavstyle">
         <div class="logo">
-            <img  src="./images/logo.png" alt="">
+            <img  src="./images/logo.png" onclick="redirecttohomepage()" alt="">
         </div>
+        <div id="onlyfornavstyl">
         <ul class="section" id="nav_buttons">
-            <li class="sub-menu" id="men"><a href="https://course.masaischool.com/lectures">Men</a>
+            <li class="sub-menu" id="men"><a href="#">Men</a>
                 <ul class="drop-down" >
                   
                      <li><a href="/products.html"  data-subc="T-Shirt" data-gend="Men">T-Shirt</a></li>
@@ -264,12 +88,15 @@ text-align: left;
                     
         </ul>
     </li>
-    <input id="search" type="text" placeholder="Search Here">
+   
         </ul>
+        <input id="search" type="text" placeholder="Search Here">
+        </div>
+        </div>
 
 
                 </div>
-                <a href="#" id="cartlogoidi"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
+                <a href="./cart.html" id="cartlogoidi"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
                 <div  id="loginidi" ><img src="./images/login.jpg" id="loginid" alt=""></div>
                 </div>
                 </nav>
