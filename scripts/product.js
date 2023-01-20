@@ -11,7 +11,7 @@ let priceSort = document.getElementById("sortbyprice")
 let clearFilters = document.getElementById("clearFilters");
 let cardsperpage = 12 ;
 
-let LSobj = {gender: "Men" , subcategory : "T-Shirts" }
+// let LSobj = {gender: "Men" , subcategory : "T-Shirts" }
 
 
 let globaldata = [];
@@ -32,7 +32,7 @@ window.addEventListener("load",()=>{
         globaldata = [...data.data] ;
         sortingCopy = [...data.data] ; 
         
-        let LSdata = JSON.parse(localStorage.getItem("productInfo")) || {gender:"Men",subCat:"Sweaters"} ;
+        let LSdata = JSON.parse(localStorage.getItem("productInfo")) ;
 
        
 
@@ -55,7 +55,7 @@ window.addEventListener("load",()=>{
                 }
             }
         })
-        sortingCopy = reqData
+        sortingCopy = reqData;
         let numofpages = reqData.length/cardsperpage;
 
         // let tobj = localStorage.getItem("")
