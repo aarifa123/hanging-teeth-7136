@@ -1,14 +1,3 @@
-
-
-
-// log out code
-// let logoutButton = document.getElementById("logout-button");
-// logoutButton.addEventListener("click", () => {
-//     localStorage.setItem("loginstatus", JSON.stringify({status: false}));
-
-//     window.location.href = "index.html";
-// })
-// 
 let username = document.getElementById("username");
 let pass = document.getElementById("password");
 let form = document.getElementById("signin");
