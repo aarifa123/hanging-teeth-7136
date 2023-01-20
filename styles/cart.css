@@ -30,14 +30,49 @@ nav{
 
 }
 .cart{
+    position: relative;
     border: 1px solid rgba(128, 128, 128, 0.324);
-    height: 65px;
+    /* height: auto; */
     padding: 20px;
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
+}
+.total{
+    position: absolute;
+    width: 100%;
+    padding-top: 10px;
+    height: auto;
+    display: flex;
+    background-color: #f2f2f2;
+
+}
+.close-button{
+position: absolute;
+right: 0;
+top: 2px;
+}
+.times-close{
+    background-color:transparent;
+    width: 3px;
+    border: none;
+    font-size: 30px;
+}
+
+#am-img{
+    width: 110px;
+    display: flex;
+    justify-content: flex-start;
+}
+.america{
+    padding-left: 60px;
+    padding-top: 6px;
+}
+.render-cart{
+    display: flex;
+    position: relative;
 }
 .shipping{
     margin: 30px 0px;
@@ -177,10 +212,10 @@ button{
     margin-bottom: 3px;
     /* margin: auto; */
 }
-#F_name,#l-Name,#mobile,#add_1,#land_mark
+#F_name,#l-Name,#mobile,#add_1,#land_mark,#city,#state
 {
 height: 30px;
+padding-bottom: 10px;
 }
-input{
-    
-}
+
+
