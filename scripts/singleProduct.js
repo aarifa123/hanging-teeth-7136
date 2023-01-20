@@ -5,7 +5,7 @@ let usersURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/`
 
 let singleprodData = JSON.parse(localStorage.getItem("singleProduct"));
 
-let logStatus = JSON.parse(localStorage.getItem("loginstatus")) || {status:true , id:20};
+let logStatus = JSON.parse(localStorage.getItem("loginstatus")) ;
 
 let recentVisited = JSON.parse(localStorage.getItem("recentStack")) || [];
 

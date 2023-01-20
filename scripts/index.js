@@ -9,7 +9,8 @@ dropDown.forEach((item)=>{
    obj.subCat=e.target.dataset.subc;
 
    localStorage.setItem("productInfo",JSON.stringify(obj));
-   console.log(obj)
+   console.log(obj);
+   window.location.href = "/products.html"
   })
    
 })
