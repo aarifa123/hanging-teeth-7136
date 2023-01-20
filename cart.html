@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Checkout Summary </title>
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="stylesheet" href="./styles/scrolebar.css" />
 </head>
-<link rel="stylesheet" href="./styles/cart.css">
 <style>
 </style>
 <body>
@@ -17,74 +18,16 @@
 
         <div class="cart">
             <div class ="edit">
-            <h2 id="count">1.YOUR CART 0 item(s)</h2>
+            <h2 id="count">1.YOUR CART <span id="numOfitems">0</span> item(s)</h2>
             <h3>Edit</h3>
          </div>
          <!-- <div class="total">            -->
-            <div class="render-cart"> 
-                <div id="img">
-                    <img  id="am-img"src="https://imagescdn.aeo.in/img/app/product/7/793139-9378620.jpg?auto=format" alt="aeimg">
-                  </div>
-                  <div class="america">
-                    <h5>AMERICAN EAGLE MEN NAVY COLORBLOCK T-SHIRT</h5>
-                    <p>1,259.00 1,799.00 30% OFF</p>
-                    <p>Color: Navy</p>
-                    <select name="size" id="size-select">
-                        <option value="xs">xs</option>
-                        <option value="small">S</option>
-                        <option value="medium">M</option>
-                        <option value="large">L</option>
-                        <option value="xtra-large">XL</option>
-                        <option value="double-XL">XXL</option>
-                    </select>
-                    <select name="qunty" id="quantity">
-                        <option value="no-1">1</option>
-                        <option value="no-2">2</option>
-                        <option value="no-3">3</option>
-                        <option value="no-4">4</option>
-                        <option value="no-5">5</option>
-                        <option value="no-6">6</option>
-                        <option value="no-7">7</option>
-                        <option value="no-8">8</option>
-                        <option value="no-9">9</option>
-                        <option value="no-10">10</option>
-                    </select>
-                  </div>
-                  <div class="close-button"><button class="times-close">&times;</button></div>
-              </div>
-          <div class="render-cart">
-            <div id="img">
-                <img  id="am-img"src="https://imagescdn.aeo.in/img/app/product/7/793139-9378620.jpg?auto=format" alt="aeimg">
-              </div>
-              <div class="america">
-                <h5>AMERICAN EAGLE MEN NAVY COLORBLOCK T-SHIRT</h5>
-                <p>1,259.00 1,799.00 30% OFF</p>
-                <p>Color: Navy</p>
-                <select name="size" id="size-select">
-                    <option value="xs">xs</option>
-                    <option value="small">S</option>
-                    <option value="medium">M</option>
-                    <option value="large">L</option>
-                    <option value="xtra-large">XL</option>
-                    <option value="double-XL">XXL</option>
-                </select>
-                <select name="qunty" id="quantity">
-                    <option value="no-1">1</option>
-                    <option value="no-2">2</option>
-                    <option value="no-3">3</option>
-                    <option value="no-4">4</option>
-                    <option value="no-5">5</option>
-                    <option value="no-6">6</option>
-                    <option value="no-7">7</option>
-                    <option value="no-8">8</option>
-                    <option value="no-9">9</option>
-                    <option value="no-10">10</option>
-                </select>
-              </div>
-
-          </div>
-          
-         <!-- </div> -->
+           <div id="appendCart">
+            
+            
+           </div>
+           
+              
         <!-- product will append here -->
         </div>
 
@@ -163,11 +106,11 @@
 
         <div class="order">
             <h1>Order Summery</h1>
-            <div><p>Oder value :</p><span>0.000</span></div>
-            <div><p>Product Discount :</p><span>0.000</span></div>
+            <div><p>Oder value :</p><span id="orderVal">0.000</span></div>
+            <div><p>Product Discount :</p><span id="prodDiscount">0.000</span></div>
             <div><p>shipping :</p><span>FREE</span></div>
-            <div><p>TOTAL : </p><span>0.000</span></div>
-            <p style="color: rgb(0, 163, 0);" >You saved on this order</p>
+            <div><p>TOTAL : </p><span id="totalAmt">0.000</span></div>
+            <p style="color: rgb(0, 163, 0);" >You saved <span id="prodDis">0</span> on this order</p>
             <div id="save-payment">
                 <img src="https://cdn-icons-png.flaticon.com/128/1161/1161490.png" alt="secure">
                 <p>Safe and Secure Payments.
@@ -180,6 +123,14 @@
     </div>
 
 </div>
+
+<div id="noProds">
+    <h2></h2>
+</div>
 </body>
 <script src="./scripts/cart.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    // swal("HEHEEHHEEH");
+</script>
 </html>
