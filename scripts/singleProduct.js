@@ -1,9 +1,16 @@
-let usersURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI`
+let usersURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/`
 // {loginstaus : true , UserID : 2}
 
-let loggedINuserId = 2 || null;
+// let loggedINuserId = 2 || null;
 
 let singleprodData = JSON.parse(localStorage.getItem("singleProduct"));
+
+let logStatus = JSON.parse(localStorage.getItem("loginstatus")) || {status:true , id:20};
+
+let recentVisited = JSON.parse(localStorage.getItem("recentStack")) || [];
+
+console.log(recentVisited);
+
 
 var userCart = null;
 
@@ -32,7 +39,7 @@ let AddtoBag = document.getElementById("AddtoBag") // Add event listner to post 
 
 
 window.addEventListener("load",()=>{
-    console.log(singleprodData)
+    // console.log(singleprodData)
     upperMainC.innerText = singleprodData.MainCategory ;
     upperSubC.innerText = singleprodData.SubCategory;
     upperTitle.innerText = singleprodData.Title;
@@ -50,12 +57,12 @@ window.addEventListener("load",()=>{
     title.innerText = singleprodData.Title;
     price.innerText = singleprodData.Price;
     circleColor.innerText = singleprodData.color;
-
+    
 })
 
 
-let imageSelect = document.querySelectorAll(".div1Images");
 
+let imageSelect = document.querySelectorAll(".div1Images");
 imageSelect.forEach((ele,ind)=>{
     ele.addEventListener("click",(e)=>{
         let attr = e.target.dataset.img;
@@ -63,3 +70,68 @@ imageSelect.forEach((ele,ind)=>{
     })
 })
 
+
+AddtoBag.addEventListener("click",()=>{
+
+    let sizeV = sizeValue.value;
+    if(logStatus.status === false){
+        alert("Kindly Sign In first to add In the Cart");
+        window.location.href = "/signin.html"
+    }else if(sizeV===""){
+        alert("Plese Select the Size")
+    }else{
+        // alert(sizeV)
+        let obj = {};
+        obj.id = singleprodData.__id;
+        obj.title = singleprodData.Title;
+        obj.image = singleprodData.Image1;
+        obj.price = singleprodData.Price;
+        obj.size = sizeV;
+        obj.color = singleprodData.color;
+
+        // alert(JSON.stringify(obj))
+
+        fetch(`${usersURL}${logStatus.id}`)
+        .then((res)=>{
+            return res.json();
+        })
+        .then((UserData)=>{
+            // console.log(UserData);
+            let reqData = UserData;
+            let c = 0 ;
+            for(ele of reqData.cart){
+                // console.log(ele)
+                if(ele.id === obj.id && ele.size === obj.size){
+                    c++;
+                    break;
+                }
+            }
+            
+            if(c===0){
+                // alert("Workable")
+                reqData.cart.push(obj);
+                
+                fetch(`${usersURL}${logStatus.id}`,{
+                    method: "PUT",
+                    headers: {'Content-Type':'application/JSON'},
+                    body:JSON.stringify(reqData)
+                })
+                .then((res)=>{
+                    return res.json();
+                })
+                .then((UserData)=>{
+                    console.log(UserData);
+                })
+                
+                alert("Product Added in the Bag");
+
+            }else{
+                alert("Product Already In the Bag")
+            }
+
+            // reqData.push(1)
+            // console.log(reqData)
+        })
+
+    }
+})
