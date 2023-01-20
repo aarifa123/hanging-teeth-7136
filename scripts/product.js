@@ -34,6 +34,8 @@ window.addEventListener("load",()=>{
         
         let LSdata = JSON.parse(localStorage.getItem("productInfo")) || {gender:"Men",subCat:"Sweaters"} ;
 
+       
+
         let reqData = filteredData.filter((element,index)=>{
             if(LSdata.gender === "" && LSdata.subCat === "Jeans"){
                 if(element.SubCategory === "Jeans"){
@@ -227,6 +229,7 @@ function renderDOM(prodData){
         ele.addEventListener("click",(e)=>{
             // alert(`The type is ${e.target.dataset.mainc} & id is ${e.target.dataset.id}`)
             // console.log(e.target.dataset.mainc);
+            let recentVisited = JSON.parse(localStorage.getItem("recentStack")) || [];
 
             let singleprod = {};
 
@@ -241,6 +244,55 @@ function renderDOM(prodData){
             singleprod.Image3  = e.target.dataset.img3;
             singleprod.Image4  = e.target.dataset.img4;
             singleprod.color = e.target.dataset.col;
+            
+
+            if(recentVisited.length===0){
+                recentVisited.push(singleprod);
+                localStorage.setItem("recentStack",JSON.stringify(recentVisited));
+            }else if(recentVisited.length<15){
+                let int =  0;
+                let c = 0 ;
+                recentVisited.forEach((eleme,inde)=>{
+                    if(eleme.__id === singleprod.__id){
+                        int = inde;
+                        c++;
+                    }
+                })
+
+                if(c===0){
+                    recentVisited.push(singleprod);
+                    localStorage.setItem("recentStack",JSON.stringify(recentVisited));
+                }else{
+                    recentVisited.splice(int,1);
+                    recentVisited.push(singleprod);
+                    localStorage.setItem("recentStack",JSON.stringify(recentVisited));
+                }
+
+            }else{
+                
+                let int =  0;
+                let c = 0 ;
+                recentVisited.forEach((eleme,inde)=>{
+                    if(eleme.__id === singleprod.__id){
+                        int = inde;
+                        c++;
+                    }
+                })
+
+                if(c===0){
+                    console.log("hehe")
+                    recentVisited.shift();
+                    recentVisited.push(singleprod);
+                    localStorage.setItem("recentStack",JSON.stringify(recentVisited));
+                }else{
+                    recentVisited.splice(int,1);
+                    recentVisited.shift();
+                    recentVisited.push(singleprod);
+                    localStorage.setItem("recentStack",JSON.stringify(recentVisited));
+                }
+
+                
+            }
 
             // console.log(singleprod)
             localStorage.setItem("singleProduct",JSON.stringify(singleprod));
