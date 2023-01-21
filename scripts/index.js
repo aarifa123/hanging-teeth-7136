@@ -13,7 +13,7 @@ dropDown.forEach((item)=>{
    obj.subCat=e.target.dataset.subc;
 
    localStorage.setItem("productInfo",JSON.stringify(obj));
-   console.log(obj);
+   
    window.location.href = "/products.html"
   })
    
@@ -41,9 +41,22 @@ fetch("https://script.googleusercontent.com/macros/echo?user_content_key=OWlD6cV
          let str=item.Title.toLowerCase();
         // console.log(str)
         if(str.includes(searchVal.toLowerCase()))
-        console.log(str)
-         return true;
+         { //console.log(item);
+
+        return true;
+         // console.log(localStorage.getItem("searchProduct",JSON.stringify(item)))
+        
+         }
        })
+
+       //console.log(newSearch)
+       let obj={};
+       obj.gender="search";
+       obj.subCat=null;
+       localStorage.setItem("productInfo",JSON.stringify(obj));
+       localStorage.setItem("searchProduct",JSON.stringify(newSearch));
+       window.location.href = "/products.html"
+      
         
    })
 })
