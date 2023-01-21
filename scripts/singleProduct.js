@@ -10,6 +10,8 @@ let logStatus = JSON.parse(localStorage.getItem("loginstatus")) || {status:true 
 let recentVisited = JSON.parse(localStorage.getItem("recentStack")) || [];
 
 console.log(recentVisited);
+let titlt = document.getElementById("titled");
+
 
 
 var userCart = null;
@@ -58,6 +60,7 @@ window.addEventListener("load",()=>{
     colorincircle.style.backgroundColor = `${col}`;
     
     title.innerText = singleprodData.Title;
+    titlt.innerText = `Buy ${singleprodData.Title}`
     price.innerText = singleprodData.Price;
     circleColor.innerText = singleprodData.color;
     
