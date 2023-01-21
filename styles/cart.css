@@ -91,7 +91,7 @@ top: 2px;
 .shipping{
     margin: 30px 0px;
     border: 1px solid rgba(128, 128, 128, 0.334);
-    height: 65px;
+    height: auto;
     padding: 20px;
     border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -99,6 +99,29 @@ top: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
 }
+#button-address{
+    display: flex;
+   justify-content: space-between; 
+ }
+ .append-address{
+   padding-top: 10px;
+   margin-top: 3px;
+}
+.append-address>h5{
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px;
+}
+.append-address>p{
+    padding: 5px;
+}
+ #deliver-button{
+     width:300px ;
+     height: 50px;
+     background-color: black;
+     color: aliceblue;
+     margin-top: 5px;
+ }
 .payment{
     border: 1px solid rgba(128, 128, 128, 0.345);
     height: 25px;
