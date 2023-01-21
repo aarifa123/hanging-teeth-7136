@@ -36,9 +36,11 @@ form.addEventListener("click", (event) => {
             if (user) {
                 localStorage.setItem("loginstatus", JSON.stringify({status: true, id: user.id}));
                 if (user.admin) {
+                    alert("Hi Admin Welcome Back...")
                     window.location.href = "admin.html";
                    
                 } else {
+                    alert("Hi User Welcome Back...")
                     window.location.href = "index.html";  
                 }
             } else {
