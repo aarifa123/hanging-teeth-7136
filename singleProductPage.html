@@ -4,16 +4,228 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title id="title"></title>
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/landing.css">
-    <link rel="stylesheet" href="./styles/scrolebar.css">
+    <!-- <link rel="stylesheet" href="./styles/scrolebar.css"> -->
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Avenir Next Regular','Helvetica Neue',Helvetica,Arial,sans-serif;
+            letter-spacing: .5px;
+        }
         #body{
             margin-top: 90px;
         }
+        #bodycate{
+            display: flex;
+            justify-content: center;
+            padding: 10px 0px;
+            font-size: 12px;
+        }
+        #bodycate>span{
+            padding: 0px 20px;
+            color: gray;
+            font-size: 12px;
+        }
+        #upperTitle{
+            color: gray;
+            font-size: 12px;
+        }
+        #bodypagemain{
+            display: flex;
+        }
+        #bodypagemain>div:nth-child(1){
+            width: 20%;
+        }
+        #bodypagemain>div:nth-child(1)>div{
+         width: 60px;
+         height: 100px;
+         margin-left: auto;
+         padding-right: 10px;
+        }
+        #bodypagemain>div:nth-child(1)>div>img{
+            border-radius: 10px;
+        }
+        #bodypagemain>div:nth-child(2){
+            width: 498px;
+            overflow: hidden;
+
+        }
+        #bodypagemain>div:nth-child(3){
+            width: 375px;
+            padding: 50px;
+        }
+        #curimageimg{
+            height: 627px;
+            overflow: hidden;
+        }
+        #currimage{
+            border: 0.5px solid rgb(203, 203, 203);
+            border-radius: 10px;
+            transition: all .5s;
+        }
+        #currimage:hover{
+            transform: scale(1.2);
+        }
+        #shareIcon{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: rgb(224, 224, 224);
+            padding: 10px;
+            border-radius: 50%;
+            margin-left: 31%;
+            margin-top: 7px;
+        }
+        #title{
+            text-align: center;
+            font-size: 20px;
+            font-family: inherit;
+        }
+        #priceprice{
+        margin-top: 30px;
+        text-align: center;
+        }
+        #priceprice>p:nth-child(1){
+            color: red;
+        }
+        #colorincircle{
+            width: 40px;
+            height: 40px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        #circleColor{
+            text-align: center;
+            margin-top: 8px;
+        }
+        #sizescale{
+            display: flex;
+            justify-content: space-around;
+            font-size: 15px;
+        }
+        #sizescale>img{
+            width: 30px;
+            margin-top: -5px;
+        }
+        #sizeValue,#AddtoBag{
+            width: 60%;
+            margin-left: 50px;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        #AddtoBag{
+            background-color: rgba(128, 128, 128, 0.444);
+            margin-top: 10px;
+            font-size: 15px;
+        }
+        #div3bootom{
+            margin-top: 100px;
+        }
+        #div3bootom>div,#div3bootom>h3,#div3bootom>p{
+            margin-bottom: 15px;
+        }
+        #div3bootom>h3{
+            font-size: 15px;
+        }
+        #div3bootom>div{
+            display: flex;
+        }
+        #div3bootom>div>img{
+            width: 30px;
+            height: 30px;
+        }
+        #imgs>img{
+            width: 30px;
+            margin-right: 30px;
+        }
+        #main2data{
+            margin-top: 50px;
+        }
+        #main2data>h3,#main2data>p,#main2data>div{
+            margin-bottom: 20px;
+        }
+        #recentsliders{
+            overflow: hidden;
+            height: 370px;
+
+        }
+        #recentdata{
+            border: 1px solid grey;
+            /* width: 100%; */
+            display: flex;
+            height: 345px;
+            overflow: scroll;
+        }
+        #recentsliders>h3{
+            margin-left: 20px;
+        }
+        #recentdata>div>h3{
+         font-size: 10px;
+        }
+        #recentdata>div>img{
+            width: 180px;
+            height: 250px;
+            padding: 10px;
+        }
+        #recentdata>div>p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bolder;
+            color: red;
+       }
+
+
+
+
+
+
+
+
+
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3BD787 #E4EBE6;
+  }
+  *::-webkit-scrollbar {
+    width: 5px;
+    width: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background-color: #E4EBE6;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #c21e1e00;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #958b8b;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #958b8b;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #a30000;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #9f0038;
+  }
+  
     </style>
 </head>
 <body>
@@ -145,13 +357,13 @@
                     </div> 
                     <!-- here nav bar ends -->
     <div id="body">
-        <div>
+        <div id="bodycate">
             <div>Home</div><span>/</span>
             <div id="upperMainC"></div><span>/</span>
             <div id="upperSubC"></div><span>/</span>
             <div id="upperTitle"></div>
         </div>
-        <div>
+        <div id="bodypagemain">
             <div>
                 <div><img class="div1Images" id="image1" src="" alt="error"></div>
                 <div><img class="div1Images" id="image2" src="" alt="error"></div>
@@ -159,27 +371,27 @@
                 <div><img class="div1Images" id="image4" src="" alt="error"></div>
             </div>
             <div>
-                <img id="shareIcon" src="" alt="error">
-                <img id="currimage" src="" alt="error">
-                <div>
+                <div id="shareIcon"><img src="./images/share.png" alt="error"></div>
+                <div id="curimageimg"><img id="currimage" src="" alt="error"></div>
+                <div id="main2data">
                     <h3>Materials & Care</h3>
                     <p>100% Cotton</p>
                     <p>Machine wash</p>
                     <h3>The Details</h3>
                     <p id="description"></p>
-                    <div>Color <span id="color"></span></div>
+                    <div>Color :- <span id="color"></span></div>
                 </div>
             </div>
             <div>
                 <div id="title"></div>
-                <div>
+                <div id="priceprice">
                     <p>₹ <span  id="price"></span></p>
                     <p>(Inclusive of all taxes)</p>
                 </div>
                 <div id="colorincircle"></div>
                 <div id="circleColor"></div>
-                <div>
-                    <img src="#" alt="error">
+                <div id="sizescale">
+                    <img src="./images/scale.png" alt="error">
                     <p>Size Chart</p>
                     <p>Find the perfect size now !!</p>
                 </div>
@@ -201,27 +413,28 @@
                 <div>
                     <p>Return Policy</p>
                 </div>
-                <div>
+                <div id="div3bootom">
                     <h3>Size & Fit</h3>
                     <p>Classic fit</p>
                     <h3>Need Help Finding Your Size?</h3>
                     <div>
-                        <img src="#" alt="error">
+                        <img src="./images/scale.png" alt="error">
                         <p>Size Chart</p>
                     </div>
                     <div>
                         Product Disclosure <span>+</span>
                     </div>
-                    <div>
-                        <img src="" alt="error">
-                        <img src="" alt="error">
+                    <div id="imgs">
+                        <img src="./images/bluefacebook.png" alt="error">
+                        <img src="./images/twiter.png" alt="error">
                     </div>
                 </div>
             </div>
         </div>
         <div id="recentsliders">
             <h3>RECENTLY VIEWED</h3>
-            <div></div>
+            <div id="recentdata">
+            </div>
         </div>
     </div>
     <footer id="footer">
@@ -281,7 +494,49 @@
 <script src="./scripts\index.js"></script>
 <script src="./scripts\signin.js"></script>
 <script>
-    
+ 
+    let body = document.getElementById("shareIcon");
+    let bodyy = document.getElementById("body");
+   let recentdata = document.getElementById("recentdata");
+   let localstoredata = JSON.parse(localStorage.getItem("recentStack"))||[];
+let stack = [];
+let count = 1;
+for(let a = localstoredata.length-1;a>=0;a--){
+    count++;
+    stack.unshift(localstoredata[a]);
+    console.log(localstoredata[a]);
+    if(count == 15){
+    localStorage.setItem("recentStack",JSON.stringify(stack));
+        break;
+    }
+   let div  = document.createElement("div");
+   let img = document.createElement("img");
+   let h3  =document.createElement("h3");
+//    let title = (localstoredata[a].Title);
+   h3.innerText = localstoredata[a].Title.slice(0,30)+"...";
+   let p = document.createElement("p");
+   p.innerText = "Rs - "+localstoredata[a].Price;
+   img.setAttribute("src",localstoredata[a].Image1);
+   div.append(img,h3,p);
+   recentdata.append(div);
+   stack.unshift();
+   div.addEventListener("click",()=>{
+    resenttomainpro(localstoredata[a]);
+   })
+}
+
+function resenttomainpro(arr){
+    localStorage.setItem("singleProduct",JSON.stringify(arr));
+    window.location.href = "/singleProductPage.html"
+}
+window.addEventListener('scroll',(event) => {
+    setTimeout(() => {
+        body.style.display = "none";
+    }, 2000);
+});
+
+
+
     document.querySelector("#loginidi").addEventListener("click",function(){
         document.querySelector(".popup").classList.add("active")
         

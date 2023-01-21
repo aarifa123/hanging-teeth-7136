@@ -32,7 +32,7 @@ let color = document.getElementById("color") // Append color
 let title = document.getElementById("title") // Append title 
 let price = document.getElementById("price") // Append price
 let circleColor = document.getElementById("circleColor") // Append color
-
+let colorincircle = document.getElementById("colorincircle");
 
 let sizeValue = document.getElementById("sizeValue") // Checking if value is not empty
 let AddtoBag = document.getElementById("AddtoBag") // Add event listner to post in user chart and checl data in cart
@@ -54,6 +54,9 @@ window.addEventListener("load",()=>{
     currimage.setAttribute("src",`${singleprodData.Image1}`);
     description.innerText = singleprodData.Description;
     color.innerText = singleprodData.color;
+    let col = (singleprodData.color).toLowerCase();
+    colorincircle.style.backgroundColor = `${col}`;
+    
     title.innerText = singleprodData.Title;
     price.innerText = singleprodData.Price;
     circleColor.innerText = singleprodData.color;
