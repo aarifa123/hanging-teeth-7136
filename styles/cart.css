@@ -321,3 +321,10 @@ padding-bottom: 10px;
 }
 
 
+#noProds{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -7,7 +7,9 @@ form.addEventListener("click", (event) => {
    
     // checking for  if the input fields are empty
     if (username.value === "" || pass.value === "" || Name.value === "") {
-        alert("Please fill in the input fields.");
+        // alert("Please fill in the input fields.");
+        Swal.fire('Please fill in the input fields.')
+
         return;
     }
 
@@ -29,22 +31,42 @@ form.addEventListener("click", (event) => {
         // check if user is found
         let loginstatus = JSON.parse(localStorage.getItem("loginstatus"));
         if (loginstatus && loginstatus.status) {
-            alert("You are already logged in.");
+            // alert("You are already logged in.");
+            Swal.fire('You are already logged in.')
             // return;
         }
         else {
             if (user) {
                 localStorage.setItem("loginstatus", JSON.stringify({status: true, id: user.id}));
                 if (user.admin) {
-                    alert("Hi Admin Welcome Back...")
-                    window.location.href = "admin.html";
+                    Swal.fire({
+                        position: 'top',
+                        icon: 'success',
+                        title: 'Hi Admin Welcome Back...',
+                        showConfirmButton: false,
+                        timer: 2000
+                      })
+                      setTimeout(() => {
+                         window.location.href = "./admin.html";
+                      }, 2000);
+                   
                    
                 } else {
-                    alert("Hi User Welcome Back...")
-                    window.location.href = "index.html";  
+                    Swal.fire({
+                        position: 'top',
+                        icon: 'success',
+                        title: 'Hi User Welcome Back...',
+                        showConfirmButton: false,
+                        timer: 2000
+                      })
+                      setTimeout(() => {
+                         window.location.href = "./index.html";  
+                      }, 2000);
+                   
                 }
             } else {
-                alert("Incorrect username, password or name. Please try again.");
+                // alert("Incorrect username, password or name. Please try again.");
+                Swal.fire('Incorrect username, password or name. Please try again.')
             }
         }
        

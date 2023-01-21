@@ -92,7 +92,7 @@
 
                 </div>
                 <a href="#" id="cartlogoidi"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
-                <div id="loginidi" ><img src="./images/login.jpg" id="loginid" alt=""></div>
+                <div id="loginidi" onclick="datafunction()"><img src="./images/login.jpg" id="loginid" alt=""></div>
                 </div>
                 </nav>
 
@@ -258,17 +258,51 @@
 <script src="/scripts/product.js"></script>
 <script src="./scripts\index.js"></script>
 <script src="./scripts\signin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 <script>
     
-  document.querySelector("#loginidi").addEventListener("click",function(){
-      document.querySelector(".popup").classList.add("active")
-      
-          })
-      
-          document.querySelector(".popup .close-btn").addEventListener("click",function(){
-      document.querySelector(".popup").classList.remove("active");
-      
-          })
+
+    function datafunction(){
+    let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||[];
+
+// document.querySelector("#loginidi").addEventListener("click",function(){
+    if(loginstatus.status == false || loginstatus == []){
+        document.querySelector(".popup").classList.add("active")
+    }
+    else{
+        let idi = loginstatus.id;
+        // let output = confirm("Hi User... \n Do You Want to Logout...");
+        Swal.fire({
+        title: 'Do You Want To Logout...',
+        text: "Please Confirm...",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes , Logout...'
+        }).then((result) => {
+       if (result.isConfirmed) {
+       let obj ={
+                id:idi,
+                status:false
+            }
+            localStorage.setItem("loginstatus",JSON.stringify(obj));
+            Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Your Have Successfully Logout',
+            showConfirmButton: false,
+            timer: 2000 
+        })
+  }
+})
+    }
+
+document.querySelector(".popup .close-btn").addEventListener("click",function(){
+document.querySelector(".popup").classList.remove("active");
+
+})
+}
 </script>
 <!-- <script src="https://aarifa123.github.io/hanging-teeth-7136/scripts/Adminfile.js"></script> -->
 </html>
