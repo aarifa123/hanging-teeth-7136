@@ -24,4 +24,10 @@
     border:2px solid red;
     
 }
+#ParentCont{
+    margin-top: 90px;
+}
+button{
+    margin-left: 0px!important;
+}
 

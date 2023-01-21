@@ -1,6 +1,7 @@
 let show=document.getElementById("popupp");
 let btn = document.getElementById("btun");
 let close =document.getElementById("close-btn");
+let titlt = document.getElementById("title");
 btn.addEventListener(("click"), ()=>{
     show.style.display = "flex";
 
@@ -137,7 +138,7 @@ function renderCartCards (item){
     let price = item.price;
     let size = item.size;
     let col = item.color;
-
+    title.innerText = `Buy ${item.title}`
     return `<div class="render-cart"> 
                 <div id="img">
                     <img  class="cart-img" src="${img}" alt="aeimg">
