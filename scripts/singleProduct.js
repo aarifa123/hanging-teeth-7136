@@ -126,7 +126,7 @@ AddtoBag.addEventListener("click",()=>{
                     return res.json();
                 })
                 .then((UserData)=>{
-                    console.log(UserData);
+                    // console.log(UserData);
                 })
                 
                 alert("Product Added in the Bag");

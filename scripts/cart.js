@@ -35,22 +35,24 @@ show.style.display="none";
 
 let userDataURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/`
 
-let loginStatus = JSON.parse(localStorage.getItem("loginstatus")) || {status:true , id:1};
+let loginStatus = JSON.parse(localStorage.getItem("loginstatus"))  || null;
 
 
-console.log(loginStatus.status)
 let bodydiv =  document.querySelector(".eagle");
 let noprod = document.querySelector("#noProds>h2")
 let appendCart = document.getElementById("appendCart");
 
 window.addEventListener("load",()=>{
-    if(loginStatus.status===false){
+    if( loginStatus===null || loginStatus.status===false){
+        
+        // console.log(loginStatus.status)
         bodydiv.style.display = "none"
         
         // console.log( typeof noprod)
         noprod.innerText = "Please Login First" ; 
         // console.log(bodydiv)
     }else{
+        // console.log("HEEH")
         let userId = loginStatus.id ;
     
         fetch(`${userDataURL}${userId}`)
@@ -66,7 +68,9 @@ window.addEventListener("load",()=>{
             }else{
                 bodydiv.style.display = "flex"
                     
-                renderDOMcart(ourCart)
+                renderDOMcart(ourCart,data)
+
+
             }
         })
     }
@@ -75,14 +79,14 @@ window.addEventListener("load",()=>{
 
 
 
-function renderDOMcart (data){
+function renderDOMcart (data,wholedata){
     let numitems = document.getElementById("numOfitems");
     numitems.innerText = data.length ; 
 
 
     
     let arr = data.map((ele,ind)=>{
-        return renderCartCards(ele);
+        return renderCartCards(ele,ind);
     })
 
     let orderVal = document.getElementById("orderVal") ; 
@@ -94,6 +98,32 @@ function renderDOMcart (data){
         ${arr.join("")}
     `
     let sizeSelect = document.querySelectorAll(".quantity");
+
+    let closebtn = document.querySelectorAll(".close-button>button");
+
+    closebtn.forEach((elem,inde)=>{
+        
+       
+
+        elem.addEventListener("click",(e)=>{
+            // alert(JSON.stringify(wholedata));
+            wholedata.cart.splice(inde,1);
+            // data.splice(inde,1);
+            fetch(`${userDataURL}${loginStatus.id}`,{
+                method: "PUT",
+                headers: {'Content-Type':'application/JSON'},
+                body:JSON.stringify(wholedata)
+            })
+            .then((res)=>{
+                return res.json();
+            })
+            .then((UserData)=>{
+                location.reload();
+            })
+           
+        })
+    })
+    
 
     sizeSelect.forEach((ele,ind)=>{
         ele.addEventListener("change",(e)=>{
@@ -128,7 +158,7 @@ function renderDOMcart (data){
 
 // function(data,)
 
-function renderCartCards (item){
+function renderCartCards (item,index){
     
     // item 
 
@@ -169,7 +199,7 @@ function renderCartCards (item){
                         <option value="10">10</option>
                     </select>
                 </div>
-                <div class="close-button" data-id = "${id} data-size="${size}"><button class="times-close">&times;</button></div>
+                <div class="close-button" data-id = "${id} data-size="${size}"><button data-int="${index}" class="times-close">&times;</button></div>
             </div>
 `
 }
