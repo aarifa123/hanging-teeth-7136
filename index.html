@@ -229,6 +229,7 @@
         </body>
         <script src="./scripts\index.js"></script>
         <script src="./scripts\signin.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
         <script>
 // let username=document.getElementById("username")
 // let pass=document.getElementById("password")
@@ -283,18 +284,37 @@
 
 
 // })
+let loginidi = document.getElementById("loginidi");
+loginidi.addEventListener("click",()=>{
+    let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||[];
 
-    
-
-            document.querySelector("#loginidi").addEventListener("click",function(){
+document.querySelector("#loginidi").addEventListener("click",function(){
+    if(loginstatus.status == false || loginstatus == []){
         document.querySelector(".popup").classList.add("active")
-        
-            })
-        
-            document.querySelector(".popup .close-btn").addEventListener("click",function(){
-        document.querySelector(".popup").classList.remove("active");
-        
-            })
+    }
+    else{
+        let idi = loginstatus.id;
+        let output = confirm("Hi User... \n Do You Want to Logout...");
+        if(output === true){
+            let obj ={
+                id:idi,
+                status:false
+            }
+            localStorage.setItem("loginstatus",JSON.stringify(obj));
+            // window.location.reload();
+        }
+    }
+
+
+})
+
+document.querySelector(".popup .close-btn").addEventListener("click",function(){
+document.querySelector(".popup").classList.remove("active");
+
+})
+})
+
+ 
         </script>
     </html>
 

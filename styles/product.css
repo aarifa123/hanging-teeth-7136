@@ -5,7 +5,7 @@
 
 }
 #ParentCont>div{
-    border:2px solid red;
+    /* border:2px solid red; */
 }
 
 #clearFilters{
@@ -17,12 +17,18 @@
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
     margin: 30px;
+    margin-left: 21%;
+    margin-top: 50px;
 }
 
 #renderhere>div{
-   
-    border:2px solid red;
-    
+    /*border:2px solid red;
+    */box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -ms-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
 }
 #ParentCont{
     margin-top: 90px;
@@ -31,3 +37,143 @@ button{
     margin-left: 0px!important;
 }
 
+.renderCards>img{
+    width: 317px;
+    height: 446px;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -ms-border-radius: 10px 10px 0px 0px;
+    -o-border-radius: 10px 10px 0px 0px;
+}
+#clearFilters{
+    color: black;
+    border: 2px solid black;
+    font-size: 15px;
+    padding: 0px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: cornsilk;
+}
+#gendersort{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 13px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: 13px;
+}
+#SCategory{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 13px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: -5px;
+    background-color: transparent;
+}
+#sortbyprice{
+    margin-left: 83%;
+    width: 200px;
+    border: 2px solid black;
+    background-color: #677c8f00;
+    height: 40px;
+    font-size: 23px;
+    border-radius: 9px;
+    position: fixed;
+}
+#Lside{
+    position: fixed;
+    width: 220px;
+}
+.cards-buttons{
+    border: 2px solid gray;
+    width: 100%;
+    color: gray;
+    font-size: 18px;
+    padding: 0px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.renderCards > h4{
+    font-family: "Avenir Next Regular";
+    font-weight: 100;
+}
+.renderCards > p{
+    text-align: center;
+    color: red;
+    padding: 20px;
+}
+#pagination>button{
+    background-color: gray;
+    color: white;
+    font-size: 15px;
+    padding-top: 8px;
+    width: 123px;
+}
+
+
+/* media screen */
+
+@media screen and (min-width:0px) and (max-width:1200px){
+    .renderCards>img{
+        height: 410px;
+    }
+    #sortbyprice{
+        margin-left: 78%;
+    }
+}
+@media screen and (min-width:0px) and (max-width:1100px){
+    .renderCards>img{
+        height: 356px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:1000px){
+    .renderCards>img{
+        height: 356px;
+    }
+    #renderhere{
+        grid-template-columns: repeat(2,1fr);
+        margin-left: 30%;
+    }
+    #sortbyprice{
+        margin-left: 72%;
+    }
+}
+@media screen and (min-width:0px) and (max-width:900px){
+    .renderCards>img{
+        height: 345px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:800px){
+    .renderCards>img{
+        height: 356px;
+    }
+    #renderhere{
+        grid-template-columns: repeat(1,1fr);
+        margin-left: 30%;
+    }
+    #Lside{
+        position: inherit;
+    }
+    #sortbyprice{
+        margin-left: 25%;
+    }
+}
+@media screen and (min-width:0px) and (max-width:700px){
+    #renderhere{
+        margin-left: 5%;
+    }
+    .renderCards>img{
+        height: 500px;
+    }
+    #renderhere>div{
+        width: 430px;
+    }
+}

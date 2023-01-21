@@ -104,6 +104,7 @@ genderSort.addEventListener("change", ()=>{
     renderDOM(filtered.slice(0,cardsperpage));
     renderPagination(filtered.length/cardsperpage , filtered);
     sortingCopy = filtered ; 
+    onclick=window.scrollTo(0, 0);
 })
 
 
@@ -134,6 +135,7 @@ subC_sort.addEventListener("change",()=>{
     renderDOM(filtered.slice(0,cardsperpage));
     renderPagination(filtered.length/cardsperpage , filtered);
     sortingCopy = filtered ; 
+    onclick=window.scrollTo(0, 0);
 })
 
 priceSort.addEventListener("change",()=>{
@@ -153,7 +155,7 @@ priceSort.addEventListener("change",()=>{
     renderDOM(sortingCopy.slice(0,cardsperpage));
     console.log(sortingCopy)
     renderPagination(sortingCopy.length/cardsperpage , sortingCopy);
-    
+    onclick=window.scrollTo(0, 0);
 })
 
 clearFilters.addEventListener("click",()=>{
@@ -166,6 +168,7 @@ clearFilters.addEventListener("click",()=>{
     renderDOM(filteredData.slice(0,cardsperpage))
     let num = filteredData.length/cardsperpage;
     renderPagination(num,filteredData);
+    window.scrollTo(0, 0);
     // sortingCopy = filteredData ; 
 })
 
@@ -186,7 +189,7 @@ function renderPagination(numOfpages,prod){
 
     function createbtn (num){
         return `
-        <button class="pagination-button" data-id="${num-1}">${num}</button>
+        <button class="pagination-button" data-id="${num-1}" onclick="window.scrollTo(0, 0);">${num}</button>
         `
     }
     let pgbuttons = document.querySelectorAll(".pagination-button");
