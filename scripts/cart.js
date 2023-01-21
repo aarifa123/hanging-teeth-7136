@@ -2,41 +2,53 @@ let show=document.getElementById("popupp");
 let btn = document.getElementById("btun");
 let close =document.getElementById("close-btn");
 
+
+
+
 btn.addEventListener(("click"), ()=>{
     show.style.display = "flex";
 
 
-let inputbtns=document.querySelectorAll("#saveus>input");
-let selectAddoption =''
+    let inputbtns=document.querySelectorAll("#saveus>input");
+    let selectAddoption =''
 
-console.log(inputbtns);
+    // console.log(inputbtns);
 
-inputbtns.forEach((item, ind) =>{
-console.log(item)
-item.addEventListener("click", ()=>{
-// alert(item.value)
-// console.log(item)
-selectAddoption=item.value
-})
-})
-console.log(inputbtns);
+    inputbtns.forEach((item, ind) =>{
+ 
+        item.addEventListener("click", ()=>{
+            selectAddoption=item.value
+        })
+   
 
-let savebtn = document.getElementById("savebtn");
-savebtn.addEventListener("click", ()=>{
-let pincpde=document.getElementById("code");
-let fname=document.getElementById("F_name");
-let lname = document.getElementById("l_Name");
-alert (selectAddoption)
-})
+    })
+
+    let savebtn = document.getElementById("savebtn");
+    savebtn.addEventListener("click", ()=>{
+        let pincpdepop=document.getElementById("code");
+        let fnamepop=document.getElementById("F_name");
+        let lnamepop = document.getElementById("l_Name");
+        let mobnumpop = document.getElementById("mobile");
+        let addln1pop = document.getElementById("add_1");
+        let landMpop = document.getElementById("land_mark");
+        let citypop= document.getElementById("city");
+        let statepop = document.getElementById("state");
+    
+        if( selectAddoption==="" || pincpdepop==="" || fnamepop==="" || lnamepop==="" || mobnumpop==="" || addln1pop==="" || landMpop==="" ||  citypop==="" || statepop==="" ){
+            alert("Please Fill all the Input Fields");
+        }else{
+            
+        }
+
+    })
 })
 close.addEventListener("click", ()=>{
-show.style.display="none";
+    show.style.display="none";
 })
 
 let userDataURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/`
 
-let loginStatus = JSON.parse(localStorage.getItem("loginstatus"))  || null;
-
+let loginStatus = JSON.parse(localStorage.getItem("loginstatus"))  || null ;
 
 let bodydiv =  document.querySelector(".eagle");
 let noprod = document.querySelector("#noProds>h2")
