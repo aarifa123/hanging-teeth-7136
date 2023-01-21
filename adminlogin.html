@@ -63,97 +63,23 @@ button[type="submit"]:hover {
   background-color: white;
   color: black;
 }
-
+nav {width: 100%;height: 70px;background: rgb(32, 7, 5);background: linear-gradient(90deg, rgba(32, 7, 5, 1) 0%, rgba(255, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 100%);display: flex;justify-content: space-between;align-items: center;font-size: 30px;}
+      nav > a:nth-child(1) { padding: 0px 30px 0px 30px;text-decoration: none;color: white;}
+      nav > div {padding: 0px 30px 0px 30px;text-decoration: none;color: black;}
+      nav>div>img{width: 40px;position: absolute;right: 6px;}
 
 
 
 </style>
 <body>
-  <nav>
-    <div class="wrapper">
+    <nav>
+        <a href="./index.html">Trending Eagle</a>
+        <div><a href="./admin.html" id="admincreateaccount">Back to Page</a></div>
        
-        <div id="navTop">
-
-       <a href="">E-Gift Card</a> 
-       <a href="">Store Locator</a>
-       <a href="">Track Order</a>
-       <a href="">My AEO</a> 
-       <a href="./cart.html">Cart</a> 
-    </div>
-    <div id="onlyfornavstyle">
-        <div class="logo">
-            <img  src="./images/logo.png" onclick="redirecttohomepage()" alt="">
-        </div>
-        <div id="onlyfornavstyl">
-        <ul class="section" id="nav_buttons">
-            <li class="sub-menu" id="men"><a href="#">Men</a>
-                <ul class="drop-down" >
-                  
-                     <li><a href="/products.html"  data-subc="T-Shirt" data-gend="Men">T-Shirt</a></li>
-                    <li><a href=""  data-subc="Shirts" data-gend="Men" >Shirts</a></li>
-                    <li><a href="" data-subc="Jackets" data-gend="Men">Jackets</a></li>
-                    <li><a href="" data-subc="Hoodies" data-gend="Men">Hoodies</a></li>
-                <li><a href="" data-subc="Jeans" data-gend="Men">Jeans</a></li>
-                <li><a href="" data-subc="Shorts" data-gend="Men">sorts</a></li>
-                <li><a href="" data-subc="Sweaters" data-gend="Men"> Sweaters</a></li>
-            
-        </ul>
-            </li>
-            <li class="sub-menu" id="women"> <a href="">Women</a>
-                <ul class="drop-down">
-                    
-                    <li><a href=""data-subc="T-Shirt" data-gend="Women" >T-Shirt</a></li>
-                    <li><a href=""data-subc="Jackets" data-gend="Women">Jackets</a></li>
-                    <li><a href="" data-subc="Hoodies" data-gend="Women">Hoodies </a></li> 
-                    <li><a href="" data-subc="Jeans" data-gend="Women">Jeans</a></li>
-                    <li><a href="" data-subc="Shorts" data-gend="Women">Shorts</a></li>
-                    <li><a href="" data-subc="Sweaters" data-gend="Women"> Sweaters</a></li>
-                   
-        </ul>
-            </li>
-            <li class="sub-menu"> <a href="">Jeans</a>
-                <ul class="drop-down">
-                    
-                    <li><a href="" data-subc="Jeans" data-gend="">Skinny Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Slim Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Straight Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Airflex Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Bootcat Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Athletic fit Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Ripped Jeans</a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">High rise Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Cropped Jeans </a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Mom</a></li>
-                    <li><a href="" data-subc="Jeans" data-gend="">Ripped Jeans</a></li>
-        </ul>
-            </li>
-            <li class="sub-menu"> <a href="">sale</a>
-              
-            </li>
-            <li class="sub-menu"><a href="">Winter Wear</a>
-                <ul  class="drop-down">
-                   
-                    <li><a href="" data-subc="Hoodies" data-gend="Winterwear"> Hoodies </a></li>
-                    <li><a href="" data-subc="Jackets" data-gend="Winterwear">Jackets </a></li>
-                    <li><a href="" data-subc="Sweaters" data-gend="Winterwear">Sweaters </a></li>
-                    
-        </ul>
-    </li>
-   
-        </ul>
-        <input id="search" type="text" placeholder="Search Here">
-        </div>
-        </div>
-
-
-                </div>
-                <a href="#" id="cartlogoidi"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
-                <div id="loginidi" ><img src="./images/login.jpg" id="loginid" alt=""></div>
-                </div>
-                </nav>
+      </nav>
 
                 <!-- Nav Bar End here -->
- <h1 id="signupheading">Trending Eagle</h1>
+ <h1 id="signupheading">Create Admin Account on Trending Eagle</h1>
     <form id="form">
       <label>Name:</label>
         <input type="text" id="name" required>
@@ -166,7 +92,7 @@ button[type="submit"]:hover {
         <!-- <label>Email:</label>
         <input type="email" id="email" required>
         <br> -->
-        <button type="submit">Sign Up</button>
+        <button type="submit">Create Account</button>
       </form>
       <footer id="footer">
         <div id="footerone">
@@ -263,7 +189,8 @@ form.addEventListener("submit", (event) => {
         let newUser = {
           name: name,
           username: username,
-          password: password
+          password: password,
+          admin: true
         };
         fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI", {
           method: "POST",
@@ -276,7 +203,7 @@ form.addEventListener("submit", (event) => {
           .then((data) => {
             console.log(data);
         Swal.fire({
-      title: `Welcome! ${data.name}.You have successfully created an account with "TRENDING EAGLE"`,
+      title: `Hi! ${data.name}.You have successfully created an admin account with "TRENDING EAGLE"`,
       showClass: {
       popup: 'animate__animated animate__fadeInDown'
       },
