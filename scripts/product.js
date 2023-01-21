@@ -26,10 +26,21 @@ window.addEventListener("load",()=>{
     filteredData = [...indexdata];
     globaldata = [...indexdata] ;
     sortingCopy = [...indexdata] ; 
+    let searchData=null;
     
     let LSdata = JSON.parse(localStorage.getItem("productInfo")) ;
 
+   if(LSdata.gender== "search"){
+
    
+       let LSSearch=JSON.parse(localStorage.getItem("searchProduct")) ;
+       console.log(LSSearch)
+       renderDOM(LSSearch.slice(0,cardsperpage))
+    
+         renderPagination(LSSearch.length/cardsperpage,LSSearch);
+         localStorage.setItem("productInfo",JSON.stringify({gender:"",subCat:""}))
+   }
+   else{
 
     let reqData = filteredData.filter((element,index)=>{
         if(LSdata.gender === "" && LSdata.subCat === "Jeans"){
@@ -49,6 +60,7 @@ window.addEventListener("load",()=>{
                 return true;
             }
         }
+
     })
     sortingCopy = reqData;
     let numofpages = reqData.length/cardsperpage;
@@ -64,6 +76,8 @@ window.addEventListener("load",()=>{
     renderDOM(reqData.slice(0,cardsperpage))
     
     renderPagination(numofpages,reqData);
+
+}
     
     // console.log(filteredData)
    
