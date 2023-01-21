@@ -5,7 +5,7 @@ let usersURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/`
 
 let singleprodData = JSON.parse(localStorage.getItem("singleProduct"));
 
-let logStatus = JSON.parse(localStorage.getItem("loginstatus")) || {status:true , id:20};
+let logStatus = JSON.parse(localStorage.getItem("loginstatus")) || null;
 
 let recentVisited = JSON.parse(localStorage.getItem("recentStack")) || [];
 
@@ -80,9 +80,9 @@ imageSelect.forEach((ele,ind)=>{
 AddtoBag.addEventListener("click",()=>{
 
     let sizeV = sizeValue.value;
-    if(logStatus.status === false){
+    if( !logStatus ||   logStatus.status === false ){
         alert("Kindly Sign In first to add In the Cart");
-        window.location.href = "/signin.html"
+        // window.location.href = "/signin.html"
     }else if(sizeV===""){
         alert("Plese Select the Size")
     }else{
