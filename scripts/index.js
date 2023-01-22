@@ -31,11 +31,11 @@ fetch("https://script.googleusercontent.com/macros/echo?user_content_key=OWlD6cV
 })
 .then((data)=>{
     let req=data.data;
-    console.log(req);
+    // console.log(req);
     localStorage.setItem("indextoproduct",JSON.stringify(data.data));
     inputText.addEventListener("change",()=>{
        let searchVal=inputText.value;
-       console.log(searchVal)
+      //  console.log(searchVal)
        let newSearch=req.filter(item=>{
        // console.log(item.MainCategory)
          let str=item.Title.toLowerCase();

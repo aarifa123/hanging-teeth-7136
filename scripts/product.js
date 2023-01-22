@@ -34,7 +34,7 @@ window.addEventListener("load",()=>{
 
    
        let LSSearch=JSON.parse(localStorage.getItem("searchProduct")) ;
-       console.log(LSSearch)
+    //    console.log(LSSearch)
        renderDOM(LSSearch.slice(0,cardsperpage))
     
          renderPagination(LSSearch.length/cardsperpage,LSSearch);
@@ -167,7 +167,7 @@ priceSort.addEventListener("change",()=>{
     }
     
     renderDOM(sortingCopy.slice(0,cardsperpage));
-    console.log(sortingCopy)
+    // console.log(sortingCopy)
     renderPagination(sortingCopy.length/cardsperpage , sortingCopy);
     onclick=window.scrollTo(0, 0);
 })
@@ -291,7 +291,7 @@ function renderDOM(prodData){
                 })
 
                 if(c===0){
-                    console.log("hehe")
+                    // console.log("hehe")
                     recentVisited.shift();
                     recentVisited.push(singleprod);
                     localStorage.setItem("recentStack",JSON.stringify(recentVisited));
