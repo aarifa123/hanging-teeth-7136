@@ -91,7 +91,7 @@
 
 
                 </div>
-                <a href="#" id="cartlogoidi"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
+                <a href="#" id="cartlogoidi" onclick="redirecttocartpage()"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
                 <div id="loginidi" onclick="datafunction()"><img src="./images/login.jpg" id="loginid" alt=""></div>
                 </div>
                 </nav>
@@ -260,7 +260,7 @@
 <script src="./scripts\signin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 <script>
-    
+    function redirecttocartpage(){location.href="./cart.html"}
 
     function datafunction(){
     let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||[];
