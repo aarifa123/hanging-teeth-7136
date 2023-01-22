@@ -226,7 +226,40 @@
   *::-webkit-scrollbar-thumb:active {
     background-color: #9f0038;
   }
-  
+  @media screen and (min-width:0px) and (max-width:650px){
+    #shareIcon{
+        display: none;
+    }
+    #bodypagemain{
+        display: block;
+    }
+    #bodypagemain>div:nth-child(1){
+        display: flex;
+        width: 100%;
+    }
+    #bodypagemain>div:nth-child(2){
+        width: 100%;
+        padding: 10px;
+    }
+    #bodypagemain>div:nth-child(3){
+        width: 100%;
+        padding: 0px;
+    }
+    #curimageimg{
+        height: fit-content;
+    }
+    #main2data{
+        display: none;
+    }
+    #upperTitle{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    #recentdata{
+        width: 100%;
+    }
+  }
     </style>
 </head>
 <body>
@@ -308,7 +341,7 @@
     
     
                     </div>
-                    <a href="#" id="cartlogoidi"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
+                    <a href="#" id="cartlogoidi" onclick="redirecttocartpage()"><img src="./images/cart img.png" id="cartlogoid" alt=""></a>
                     <div id="loginidi" onclick="datafunction()"><img src="./images/login.jpg" id="loginid" alt=""></div>
                     </div>
                     </nav>
@@ -496,7 +529,7 @@
 <script src="./scripts\signin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 <script>
- 
+   function redirecttocartpage(){location.href="./cart.html"}
     let body = document.getElementById("shareIcon");
     let bodyy = document.getElementById("body");
    let recentdata = document.getElementById("recentdata");
