@@ -60,7 +60,8 @@ form.addEventListener("click", (event) => {
                         timer: 2000
                       })
                       setTimeout(() => {
-                         window.location.href = "./index.html";  
+                        window.location.reload();
+                            document.querySelector(".popup").classList.remove("active");    
                       }, 2000);
                    
                 }

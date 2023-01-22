@@ -1,6 +1,7 @@
 let show=document.getElementById("popupp");
 let btn = document.getElementById("btun");
 let close =document.getElementById("close-btn");
+let appendaddress = document.getElementById("append-address");
 
 
 
@@ -35,9 +36,54 @@ btn.addEventListener(("click"), ()=>{
         let statepop = document.getElementById("state");
     
         if( selectAddoption==="" || pincpdepop==="" || fnamepop==="" || lnamepop==="" || mobnumpop==="" || addln1pop==="" || landMpop==="" ||  citypop==="" || statepop==="" ){
-            alert("Please Fill all the Input Fields");
-        }else{
-            
+            // alert("Please Fill all the Input Fields");
+            Swal.fire({
+                title: 'Please Fill all the Input Fields',
+                showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+                }
+                })
+        }
+        else if(mobnumpop.value.length != 10){
+            // console.log(mobnumpop.value.length);
+            Swal.fire({
+                title: 'Incorrect Mobile Number...',
+                showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+                }
+                })
+        }
+        else{
+            show.style.display="none";
+            Swal.fire({
+                title: 'Address Successfully Saved...',
+                showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
+            let obj = {
+                pincpdepop:pincpdepop.value,
+                fnamepop:fnamepop.value,
+                lnamepop:lnamepop.value,
+                mobnumpop:mobnumpop.value,
+                addln1pop:addln1pop.value,
+                landMpop:landMpop.value,
+                citypop:citypop.value,
+                statepop:statepop
+            }
+            localStorage.setItem("shippingAddress".JSON.stringify(obj));
+            let Addressofshipping = JSON.parse(localStorage.getItem("shippingAddress"))||[];
+            console
+            appendaddress.style.display="block"
         }
 
     })

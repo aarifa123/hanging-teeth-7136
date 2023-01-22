@@ -81,10 +81,28 @@ AddtoBag.addEventListener("click",()=>{
 
     let sizeV = sizeValue.value;
     if( !logStatus ||   logStatus.status === false ){
-        alert("Kindly Sign In first to add In the Cart");
+        // alert("Kindly Sign In first to add In the Cart");
+        Swal.fire({
+            title: 'Kindly Sign In first to add In the Cart',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
         // window.location.href = "/signin.html"
     }else if(sizeV===""){
-        alert("Plese Select the Size")
+        Swal.fire({
+            title: 'Plese Select the Size',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+        // alert("Plese Select the Size")
     }else{
         // alert(sizeV)
         let obj = {};
@@ -129,10 +147,28 @@ AddtoBag.addEventListener("click",()=>{
                     // console.log(UserData);
                 })
                 
-                alert("Product Added in the Bag");
+                // alert("Product Added in the Bag");
+                Swal.fire({
+                    title: 'Product Added in the Bag',
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  })
 
             }else{
-                alert("Product Already In the Bag")
+                // alert("Product Already In the Bag")
+                Swal.fire({
+                    title: 'Product Already In the Bag',
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  })
             }
 
             // reqData.push(1)

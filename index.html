@@ -285,10 +285,10 @@
 
 // })
 function datafunction(){
-    let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||[];
+    let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||null;
 
 // document.querySelector("#loginidi").addEventListener("click",function(){
-    if(loginstatus.status == false || loginstatus == []){
+    if(loginstatus == null||loginstatus.status == false){
         document.querySelector(".popup").classList.add("active")
     }
     else{
@@ -316,6 +316,7 @@ function datafunction(){
             showConfirmButton: false,
             timer: 2000 
         })
+        window.location.reload();
   }
 })
     }

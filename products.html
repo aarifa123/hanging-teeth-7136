@@ -303,6 +303,23 @@ document.querySelector(".popup").classList.remove("active");
 
 })
 }
+
+
+var myID = document.getElementById("Lside");
+
+var myScrollFunc = function() {
+  var y = window.scrollY;
+  if (y >= 1000) {
+    myID.style.position = "absolute"
+    
+  }
+  if (y <= 1000) {
+    myID.style.position = "fixed"
+    
+  }
+};
+
+window.addEventListener("scroll", myScrollFunc);
 </script>
 <!-- <script src="https://aarifa123.github.io/hanging-teeth-7136/scripts/Adminfile.js"></script> -->
 </html>

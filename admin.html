@@ -8,6 +8,8 @@
     <title>Admin Data</title>
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link rel="stylesheet" href="./styles/scrolebar.css" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
       * {
         margin: 0;
@@ -229,6 +231,7 @@
     </div>
   </body>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
   <script src="./scripts/Adminfile.js"></script>
   <script>
      function locationj(){location.href="./adminlogin.html"}
@@ -306,11 +309,24 @@
       }
     }
     //To Delete Row
-    function DeleteProduct(Id) {
-      let promptnum = parseInt(prompt("Please Enter product ID to Confirm"));
+   async function DeleteProduct(Id) {
+      // swal code
+      const { value: number } = await Swal.fire({
+      title: 'ID of Product...',
+      input: 'number',
+      inputLabel: 'Your Product id',
+      inputPlaceholder: 'Please enter your product id...'
+      })
+
+      if (number) {
+        let promptnum = +number;
+        console.log(promptnum)
+      // Swal.fire(`Entered email: ${number}`)
+      // }
+      // let promptnum = parseInt(prompt("Please Enter product ID to Confirm"));
       if (promptnum + 1 === Id) {
         console.log(Id);
-        swal("Processing...");
+        swal.fire("Processing...");
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         var requestOptions = {
@@ -321,15 +337,40 @@
         fetch(`${deleteapilink}${Id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
-            swal("Your Product has Successfully Deleted...");
+            // swal("Your Product has Successfully Deleted...");
+            const Toast = Swal.mixin({
+  toast: true,
+  position: 'center',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'success',
+  title: 'Product successfully deleted...'
+})
+// swal part
             setTimeout(() => {
               location.href = "./admin.html";
-            }, 2000);
+            }, 3000);
           })
-          .catch((error) => swal("error", error));
+          .catch((error) => swal.fire("error", error));
       } else {
-        swal("Sorry Id Could'nt MATCHED !");
+        // swal.fire("Sorry Id Could'nt MATCHED !");
+        Swal.fire({
+  position: 'center',
+  icon: 'error',
+  title: "Sorry Id Could'nt MATCHED !",
+  showConfirmButton: false,
+  timer: 3000
+})
       }
+    }
     }
 
     //  update part
@@ -374,7 +415,7 @@
           form.sub.value != "" &&
           form.des.value != ""
         ) {
-          swal("Processing...");
+          swal.fire("Processing...");
           let obj = {
             row_id: ud,
             Title: form.name.value,
@@ -400,15 +441,22 @@
           fetch(updatedatafromapilink, requestOptions)
             .then((response) => response.text())
             .then((result) => {
-              swal("Product has succesfully updated...");
+              // swal("Product has succesfully updated...");
+              Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'Product has succesfully updated...',
+  showConfirmButton: false,
+  timer: 2000
+})
               setTimeout(() => {
                 updatadata.style.display = "none";
                 updatadata.style.backgroundColor = "#000000cc";
               }, 2000);
             })
-            .catch((error) => swal("Please try again"));
+            .catch((error) => swal.fire("Please try again"));
         } else {
-          swal("Please Provide Complete Information....!");
+          swal.fire("Please Provide Complete Information....!");
         }
       });
     }
@@ -425,18 +473,22 @@
       if (count + 20 < length) {
         count += 20;
         upendfatafunction(sortfetchdata);
+        onclick=window.scrollTo(0, 0);
       } else {
         // count = length;
         upendfatafunction(sortfetchdata);
+        onclick=window.scrollTo(0, 0);
       }
     });
     back.addEventListener("click", () => {
       if (count - 20 > 20) {
         count -= 20;
         upendfatafunction(sortfetchdata);
+        onclick=window.scrollTo(0, 0);
       } else {
         count = 20;
         upendfatafunction(sortfetchdata);
+        onclick=window.scrollTo(0, 0);
       }
     });
     sortbyprice.addEventListener("change",()=>{
@@ -526,7 +578,7 @@
         });
         }
         else{
-          swal("NO Data Present ...!");
+          swal.fire("NO Data Present ...!");
         }    
       }
     })

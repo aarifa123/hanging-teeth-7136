@@ -67,12 +67,11 @@ justify-content: center;
    }
    .popup.active{
        top:50%;
+       border-radius: 10px;
        opacity: 1;
-   transform: translate(-50%,-50%) scale(1);
-   transition:top 0ms ease-in-out 0ms ,
-               opacity 200ms ease-in-out 0ms,
-               transform 200ms ease-in-out 0ms
-   }
+       transform: translate(-50%,-50%) scale(1);
+       transition:top 0ms ease-in-out 0ms ,               opacity 200ms ease-in-out 0ms,               transform 200ms ease-in-out 0ms   ;
+}
    .popup .close-btn{
    font-size: 20px;
    position: absolute;
@@ -191,6 +190,7 @@ text-align: left;
 nav{
    position: fixed;
    top: 0;
+   border-bottom: 2px solid red;
    width: 100%;
    background: rgb(255,255,255);
    background: linear-gradient(0deg, rgba(255,255,255,0.9444152661064426) 0%, rgba(255,255,255,1) 100%);
