@@ -1,4 +1,4 @@
-let url = `https://script.googleusercontent.com/macros/echo?user_content_key=OWlD6cVUch3T0JJGlJZ8Sn_t22Ex-Tsua61e923ppcpk-XDSHfuN0UX_rewLfHiQunbgthpetFKaGFnC-3IXsgdGDDeVqxijm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHxcMLpTY64uk7KipC0tzgwA-CtFtpiqwclv_-BaugaHnTtJ-mDJacNtMEAPHEdJ_WVXoXee0IvfvEQ97MH3u0hyVWwnNcSLjtz9Jw9Md8uu&lib=M8J7kzd7Zlw2ThwXavx9Z1SZBtr-bOvlX` ;
+// let url = `https://script.googleusercontent.com/macros/echo?user_content_key=OWlD6cVUch3T0JJGlJZ8Sn_t22Ex-Tsua61e923ppcpk-XDSHfuN0UX_rewLfHiQunbgthpetFKaGFnC-3IXsgdGDDeVqxijm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHxcMLpTY64uk7KipC0tzgwA-CtFtpiqwclv_-BaugaHnTtJ-mDJacNtMEAPHEdJ_WVXoXee0IvfvEQ97MH3u0hyVWwnNcSLjtz9Jw9Md8uu&lib=M8J7kzd7Zlw2ThwXavx9Z1SZBtr-bOvlX` ;
 
 // console.log(url)
 
@@ -9,7 +9,7 @@ let genderSort = document.getElementById("gendersort");
 let subC_sort = document.getElementById("SCategory");
 let priceSort = document.getElementById("sortbyprice")
 let clearFilters = document.getElementById("clearFilters");
-let cardsperpage = 12 ;
+let cardsperpage = 15 ;
 
 // let LSobj = {gender: "Men" , subcategory : "T-Shirts" }
 
@@ -308,7 +308,7 @@ function renderDOM(prodData){
             // console.log(singleprod)
             localStorage.setItem("singleProduct",JSON.stringify(singleprod));
                 
-            window.location.href = "/singleProductPage.html"
+            window.location.href = "./singleProductPage.html"
         })
     })
 

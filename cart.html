@@ -8,18 +8,20 @@
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link rel="stylesheet" href="./styles/cart.css">
     <link rel="stylesheet" href="./styles/scrolebar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <style>
-    nav>a{display: flex;}
+    nav>a{display: flex;text-decoration: none;}
     nav>a>img{
         width: 85px;
     }
+    #navtext{margin-left: 20px;font-size: 30px;color: black;}
 </style>
 <body>
     <nav>
         <a href="./index.html">
             <img src="./images/logo.png" alt="">
-            <h1>Tranding Eagle</h1>
+            <a href="./index.html" id="navtext">Trending Eagle</a>
         </a>
 
     </nav>
@@ -83,13 +85,22 @@
                <input type="checkbox" id="scales" name="make" checked>
                <label for="make">Make this my default address</label>
              </div>
-             <div id="saveus">
+             <!-- <div id="saveus">
                    <p>Save As</p>
                    <input type="button" id="homebtn" value="Home">
                    <input type="button" id="officebtn" value="Office">
                    <input type="button" id="otherbtn" value="Other">
                   
-             </div>
+             </div> -->
+             <form  id="saveus">  
+    
+                <label>  
+                Save As   
+                </label> 
+                <input type="radio" id="gender" name="gender" value="male"/> Home      
+                <input type="radio" id="gender" name="gender" value="female"/> Office 
+                <input type="radio" id="gender" name="gender" value="female"/> Other
+                </form>
              <div>
              <button id="savebtn">SAVE ADDRESS</button>
            </div>
@@ -180,6 +191,7 @@
 </body>
 <script src="./scripts/cart.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 <script>
     // swal("HEHEEHHEEH");
 </script>
