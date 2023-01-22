@@ -251,6 +251,7 @@ window.addEventListener("load",()=>{
             let ourCart = data.cart ; 
             // console.log(ourCart)
             if(ourCart.length === 0){
+
                 bodydiv.style.display = "none"
                 noprod.innerText = "No Products in cart" ;
             }else{
