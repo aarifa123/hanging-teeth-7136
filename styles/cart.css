@@ -413,7 +413,6 @@ color: grey;
 @media screen and (min-width:0px) and (max-width:650px){
     .eagle{
         margin: 0px;
-        display: block!important;
     }
     .cart-img{
         width: 80px;
