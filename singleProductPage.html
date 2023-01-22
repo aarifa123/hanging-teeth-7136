@@ -539,7 +539,7 @@ let count = 1;
 for(let a = localstoredata.length-1;a>=0;a--){
     count++;
     stack.unshift(localstoredata[a]);
-    console.log(localstoredata[a]);
+    // console.log(localstoredata[a]);
     if(count == 15){
     localStorage.setItem("recentStack",JSON.stringify(stack));
         break;
@@ -573,10 +573,10 @@ window.addEventListener('scroll',(event) => {
 
 
 function datafunction(){
-    let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||[];
+    let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||null;
 
 // document.querySelector("#loginidi").addEventListener("click",function(){
-    if(loginstatus.status == false || loginstatus == []){
+    if(loginstatus == null||loginstatus.status == false){
         document.querySelector(".popup").classList.add("active")
     }
     else{

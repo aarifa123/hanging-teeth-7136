@@ -9,7 +9,7 @@ let logStatus = JSON.parse(localStorage.getItem("loginstatus")) || null;
 
 let recentVisited = JSON.parse(localStorage.getItem("recentStack")) || [];
 
-console.log(recentVisited);
+// console.log(recentVisited);
 let titlt = document.getElementById("titled");
 
 

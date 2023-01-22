@@ -320,12 +320,12 @@
 
       if (number) {
         let promptnum = +number;
-        console.log(promptnum)
+        // console.log(promptnum)
       // Swal.fire(`Entered email: ${number}`)
       // }
       // let promptnum = parseInt(prompt("Please Enter product ID to Confirm"));
       if (promptnum + 1 === Id) {
-        console.log(Id);
+        // console.log(Id);
         swal.fire("Processing...");
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -389,7 +389,7 @@ Toast.fire({
     ) {
       updatadata.style.display = "flex";
       updatadata.style.backgroundColor = "#000000cc";
-      console.log(ud, title, price, color, im1, im2, im3, im4, ma, su, de);
+      // console.log(ud, title, price, color, im1, im2, im3, im4, ma, su, de);
       undateidis.innerText = ud - 1;
       form.name.value = title;
       form.price.value = price;
